@@ -105,7 +105,7 @@ Creating the replication set creates the `AWSServiceRoleforIncidentManager` serv
 
 1. Provide a brief **Summary** of the incident to inform responders of what's happening\. Incident Manager automatically populates relevant information into the summary during an incident\.
 
-1. \(Optional\) Provide a dedupe string\.
+1. \(Optional\) Provide a dedupe string\. The dedupe string removes duplicate incidents created in the same account\.
 
 1. Choose contacts and escalation plans from the **Engagements** dropdown\.
 

@@ -14,15 +14,17 @@ Taking the time to plan for incidents ahead of time saves operational time for t
 
 Using the response plan best practices and the Incident Manager console, create dynamic response plans to automate incident response\.
 
-**Create a response plan\.**
+**Response plan details**
 
 1. Open the [Incident Manager console](https://console.aws.amazon.com/systems-manager/incidents/home), and in the left navigation, choose **Response plans**\.
 
 1. Choose **Create response plan**\.
 
-1. Enter a unique and identifiable response plan **Name**\. The response plan name only contains alpha\-numeric, hyphen, and underscore characters\. 
+1. Enter a unique and identifiable response plan **Name**\.
 
 1. \(Optional\) Enter a **Display name**\. Use the display name to provide a more user\-friendly name to the response plan\.
+
+**Incident defaults**
 
 1. Enter an incident title\. The incident title helps to identify an incident on the incidents home page\.
 
@@ -30,7 +32,9 @@ Using the response plan best practices and the Incident Manager console, create 
 
 1. \(Optional\) Provide a brief description of the incident\. 
 
-1. \(Optional\) Provide a dedupe string\. Incident Manager uses the dedupe string to prevent the same root cause from creating multiple incidents\.
+1. \(Optional\) Provide a dedupe string\. Incident Manager uses the dedupe string to prevent the same root cause from creating multiple incidents in the same account\.
+
+**\(Optional\) Chat channel**
 
 1. Choose a chat channel for the incident responders to interact in during an incident\. For more information about chat channels, see [Chat channels](chat.md)\. 
 **Important**  
@@ -38,55 +42,56 @@ Incident Manager must have permissions to publish to the chat channel's SNS topi
 
 1. \(Optional\) Choose additional SNS topics to publish to during the incident\. Adding SNS topics in multiple Regions increases redundancy in case a Region is down at the time of the incident\.
 
-1. For **Engagement**, choose any number of contacts and escalations plans\. For information about contact and escalation plan creation, see [Contacts](contacts.md) and [Escalation plans](escalation.md)\.
+**\(Optional\) Engagements**
++ For **Engagement**, choose any number of contacts and escalations plans\. For information about contact and escalation plan creation, see [Contacts](contacts.md) and [Escalation plans](escalation.md)\.
+
+**\(Optional\) Runbook**
 
 1. To select a **Runbook**:
    + Choose **Select an existing runbook**\. Select the **Owner**, **Runbook**, and **Version**\. For information about runbook creation, see [Runbooks and automation](runbooks.md)\.
    + Choose **Clone runbook from template**\. Enter a descriptive runbook name\. 
 
-1. Either choose an existing role or use the following steps to create a new role\. If you choose an existing role it must allow Incident Manager to start an automation execution for you\.
+1. Either choose an existing role or use the following steps to create a new role\. The role must allow the `ssm:StartAutomationExecution` action for your specific runbook\. For the runbook to work across accounts it must also allow the `sts:AssumeRole` action for the `AWS-SystemsManager-AutomationExecutionRole` role that you created during [Setting up cross\-account functionality](xa.md)\.
 
    1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
    1. Choose **Roles** from the left navigation and choose **Create role**\.
 
-   1. Select **Incident Manager** and choose the **Incident Manager** use case\.
+   1. Choose **Incident Manager** and choose the **Incident Manager** use case\.
 
-   1. Choose **Next: Permissions**
+   1. Choose **Next: Permissions**\.
 
    1. Choose **Create policy** and then choose the **JSON** tab\. 
 
-   1. Copy and paste the following JSON blob describing the policy into the JSON editor\.
+   1. Copy and paste the following JSON blob describing the policy into the JSON editor\. Replace the account number \(*111122223333*\) and runbook name \(*DocumentName*\) in the runbook's ARN in the following policy example\.
 
       ```
       {
-        "Version": "2012-10-17",
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Resource": "arn:aws:ssm:*:111122223333:automation-definition/DocumentName:*",
-            "Action": "ssm:StartAutomationExecution"
-          },
-          {
-            "Effect": "Allow",
-            "Resource": "arn:aws:iam::*:role/AWS-SystemsManager-AutomationExecutionRole",
-            "Action": "sts:AssumeRole"
-          }
-        ]
-      }
+         "Version": "2012-10-17",
+         "Statement": [
+           {
+             "Effect": "Allow",
+             "Resource": "arn:aws:ssm:*:111122223333:automation-definition/DocumentName:*",
+             "Action": "ssm:StartAutomationExecution"
+           },
+           {
+             "Effect": "Allow",
+             "Resource": "arn:aws:iam::*:role/AWS-SystemsManager-AutomationExecutionRole",
+             "Action": "sts:AssumeRole"
+           }
+         ]
+       }
       ```
 
-   1. Choose **Next: Tags**
-
-   1. \(Optional\) Add tags to your policy\.
+   1. Choose **Next: Tags** and \(optional\) add tags to your policy\.
 
    1. Choose **Next: Review**\.
 
-   1. Provide a **Name** and optionally provide a **Description** for the policy\.
+   1. Provide a **Name** and \(optional\) provide a **Description** for the policy\.
 
    1. Choose **Create policy**\.
 
-   1. Navigate back to the role you were creating and select for the policy you created\. 
+   1. Navigate back to the role you were creating and search for the policy you created\. Select the policy\.
 
    1. \(Optional\) Add tags to your role\.
 
@@ -94,11 +99,13 @@ Incident Manager must have permissions to publish to the chat channel's SNS topi
 
    1. Choose **Create role**\.
 
-   1. Navigate back to the response plan you are creating and refresh the **Role name** dropdown\.
+1. Navigate back to the response plan you are creating and refresh the **Role name** dropdown\.
 
-   1. Select the role you created in the IAM console\.
+1. Select the role you created\.
 
 1. Choose the **Execution target**\.
+
+**Add tags and create the response plan**
 
 1. \(Optional\) Add tags to your response plan\.
 

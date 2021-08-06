@@ -1,6 +1,6 @@
 # Escalation plans<a name="escalation"></a>
 
-AWS Systems Manager Incident Manager provides escalation paths through your defined contacts\. You can pull multiple contacts into an incident at the same time\. If these contacts don't respond, Incident Manager escalates to next set of contacts\. You can also define your escalation plan to automatically escalate even if a contact has responded\. You can add escalation plans to a response plan so escalation automatically starts at the beginning of an incident\. You can also add escalation plans to an active incident\.
+AWS Systems Manager Incident Manager provides escalation paths through your defined contacts\. You can pull multiple contacts into an incident at the same time\. If these contacts don't respond, Incident Manager escalates to the next set of contacts\. You can also choose if a plan will stop escalating once a user acknowledges the engagement\. You can add escalation plans to a response plan so escalation automatically starts at the beginning of an incident\. You can also add escalation plans to an active incident\.
 
 **Topics**
 + [Stages](#escalation-stages)
@@ -9,8 +9,8 @@ AWS Systems Manager Incident Manager provides escalation paths through your defi
 ## Stages<a name="escalation-stages"></a>
 
 Escalation plans use stages where each stage lasts a defined number of minutes\. Each stage has the following information:
-+ **Duration** \- The amount of time the plan waits until beginning the next stage\. As soon as the engagement starts the first stage begins\.
-+ **Contacts** \- The escalation plan engages each contact using its defined engagement plan\. You can set up each contact to stop the progression of the escalation plan before it goes to the next stage\. Each stage can have multiple contacts\.
++ **Duration** \- The amount of time the plan waits until beginning the next stage\. The first stage of the escalation plan begins once the engagement starts\.
++ **Contacts** \- The escalation plan engages each contact using its defined engagement plan\. You can set up each contact to stop the progression of the escalation plan before it goes to the next stage\. Each stage can have multiple contacts\. To learn more about setting up contacts, see the [Contacts](contacts.md) section of this guide\.
 
 ## Create an escalation plan<a name="escalation-create"></a>
 

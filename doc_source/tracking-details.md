@@ -4,7 +4,7 @@ The Incident Manager incident details page is an incident responder's point of r
 
 The top banner of every incident details page includes the **Incident title**, **Impact**, **Chat channel**, and **Duration**\. You can edit the incident title, impact, and chat channel by choosing **Edit** in the top right of the banner\. 
 
-The incident details page has six tabs, making it easier for responders to locate and view information during an incident\. The tabs display a counter in the tab name, indicating the number of updates to the tab\. For more information about the contents each tab and how it works, continue reading\.
+The incident details page has seven tabs, making it easier for responders to locate and view information during an incident\. The tabs display a counter in the tab name, indicating the number of updates to the tab\. For more information about the contents each tab and how it works, continue reading\.
 
 **Topics**
 + [Overview](#tracking-details-overview)
@@ -13,6 +13,7 @@ The incident details page has six tabs, making it easier for responders to locat
 + [Runbook](#tracking-details-runbook)
 + [Contacts](#tracking-details-contacts)
 + [Related items](#tracking-details-related)
++ [Properties](#tracking-details-properties)
 
 ## Overview<a name="tracking-details-overview"></a>
 
@@ -73,9 +74,18 @@ Incident Manager starts runbooks automatically using Systems Manager\. To keep t
 
 The **Contacts** tab of the incident details drives engagement of responders and teams\. From this tab you can see who has been engaged and responded, who has been engaged but not responded, and responders who are going to be engaged as part of an escalation plan\. Responders can engage other contacts directly from this tab\. To learn more about creating contacts and escalation plans, see the [Contacts](contacts.md) and [Escalation plans](escalation.md) sections of this guide\. 
 
-You can configure response plans with contacts and escalation plans to automatically start engagement at the start of an incident\. To learn more about configuring response plans, see the [Response plans](response-plans.md) section of this guide\.
+You can configure response plans with contacts and escalation plans to automatically start engagement at the beginning of an incident\. To learn more about configuring response plans, see the [Response plans](response-plans.md) section of this guide\.
 
-You can find Information about each contact on the table in the contacts tab\. Choosing the contacts name under the **Name** column takes you to the contact's details page, displaying their contact methods and engagement plan\. If an escalation plan engaged the contact, the **Escalation plan** column contains a link to the escalation plan used to contact the responder\. The **Engaged** column displays when the contact was engaged or when they will be engaged\. Acknowledgment of engagement is the last column and displays whether the responder has responded to their engagement\.
+You can find information about each contact in the table in the contacts tab\. The following are descriptions of each column in the table:
++ **Name** – Links to the contact's details page that displays the contact's contact methods and engagement plan\.
++ **Escalation plan** – Links to the escalation plan used to engage the contact\.
++ **Engaged** – Displays when the contact was engaged or when they will be engaged\.
++ **Acknowledged** – Displays if the contact has acknowledged the engagement\.
+
+To acknowledge an engagement the responder can do one of the following:
++ Phone call – Press 1 when prompted\.
++ SMS – Reply to the message with the provided code or enter the provided code on the **Contacts** tab of the incident\.
++ Email – Enter the provided code on the **Contacts** tab of the incident\.
 
 ## Related items<a name="tracking-details-related"></a>
 
@@ -90,3 +100,15 @@ The **Related Items** tab is a place for responders to gather useful resources u
 1. In **Detail**, provide an ARN or a link to an external resource\.
 
 1. Choose **Add**\.
+
+## Properties<a name="tracking-details-properties"></a>
+
+The properties tab provides details about the incident\. You can view the following details:
++ Status – Describes the current status of the incident\. The incident can be **Open** or **Resolved**
++ Start time – The time when the incident was created in Incident Manager\.
++ Resolved time – The time that the incident was resolved in Incident Manager
++ Amazon Resource Name \(ARN\) – The ARN of the incident\. Use this when referencing the incident via chat or CLI commands\.
++ Response Plan – Identifies the response plan for the selected incident\. Selecting the response plan opens the reponse plan's details page\.
++ Parent OpsItem – Identifies the OpsItem created as the parent of the incident\. A parent OpsItem can have multiple related incidents and follow up action items\. Selecting the parent OpsItem opens the parent OpsItems details page in OpsCenter\.
++ Analysis – Identifies the analysis created from this incident\. Create an analysis from a resolved incident to improve your incident response process\. Selecting the analysis opens the analysis details page\. 
++ Owner – The account that the incident was created in\.
