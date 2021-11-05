@@ -2,6 +2,8 @@
 
 Planning for an incident begins long before the incident lifecycle\. To prepare for an incident, consider each of the following topics before you create response plans\. Use monitoring, contacts, escalation plans, chat channels, and runbooks to build response plans that automate response\. 
 
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/incident-manager/latest/userguide/images/how-it-works.png)
+
 **Topics**
 + [Monitoring](#incident-response-monitoring)
 + [Contacts](contacts.md)

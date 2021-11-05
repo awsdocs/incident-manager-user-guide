@@ -38,7 +38,7 @@ Some key time points you can consider when analyzing a metric graph:
 **Limitations**
 + CloudWatch alarms and metric expressions aren't imported from an incident\.
 + Metrics that are in a region that Incident Manager doesn't support aren't imported from the incident\.
-+ Metrics in application accounts require configuration of the `CloudWatch-CrossAccountSharingRole` prior to creating the analsysis\. For more information about the role, see [Cross\-Account Cross\-Region CloudWatch console](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html) in the CloudWatch user guide\.
++ Metrics in application accounts require configuration of the `CloudWatch-CrossAccountSharingRole` prior to creating the analysis\. For more information about the role, see [Cross\-Account Cross\-Region CloudWatch console](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html) in the CloudWatch user guide\.
 
 ### Timeline<a name="analysis-details-timeline"></a>
 
@@ -60,7 +60,7 @@ Incident Manager creates recommended action items for you to review as you compl
 
 ### Checklist<a name="analysis-details-checklist"></a>
 
-Before closing an analysis, use the checklist to review actions that a responder should take\. As responders complete actions in the checklist, the icon next to the action changes from an ellipse to a checkmark, indicating that the action is complete\. If you haven't completed checklist items, Incident Manager displays a message to confirm the responder wants to close the analysis without completing it\.
+Before closing an analysis, use the checklist to review actions that a responder should take\. As responders complete actions in the checklist, the icon next to the action changes from an ellipse to a check\-mark, indicating that the action is complete\. If you haven't completed checklist items, Incident Manager displays a message to confirm the responder wants to close the analysis without completing it\.
 
 ## Analysis templates<a name="analysis-templates"></a>
 

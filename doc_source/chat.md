@@ -89,7 +89,7 @@ Chat commands aren't supported on Amazon Chime\.
 
 1. Choose any number of SNS topics you would like to notify during an incident\. To learn more about SNS topics, see [Amazon SNS](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)\.
 **Note**  
-Incident Manager requires SNS topics to to send notifications to your chat channels\.
+Incident Manager requires SNS topics to send notifications to your chat channels\.
 
 ------
 
@@ -126,7 +126,7 @@ Before you can use the AWS Chatbot client during an incident, update the access 
         }
    ```
 **Important**  
-The AWS service ssm\-incidents\.amazonaws\.com must have permissions to publish to the chat channel's SNS topic\. Without permissions to publish to the SNS topic, Incident Manager will not be able to publish notifications to your chat channel\.
+The AWS service ssm\-incidents\.amazonaws\.com must have permissions to publish to the chat channel's SNS topic\. Without permissions to publish to the SNS topic, Incident Manager won't be able to publish notifications to your chat channel\.
 
 1. Replace the `Resource` value *"arn:aws:sns:us\-east\-1:111122223333:example\_SNS\_topic"* with your Amazon SNS topic ARN\.
 

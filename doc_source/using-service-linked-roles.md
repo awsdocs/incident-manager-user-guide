@@ -20,7 +20,7 @@ The role permissions policy allows Incident Manager to complete the following ac
 + Action: `ssm-incidents:CreateTimelineEvent` on all resources related to the action\.
 + Action: `ssm:CreateOpsItem` on all resources related to the action\.
 + Action: `ssm:AssociateOpsItemRelatedItem` on `all resources related to the action.`
-+ Action: `ssm-contacts:CreateEngagement` on all resources related to the action\.
++ Action: `ssm-contacts:StartEngagement` on all resources related to the action\.
 
 You must configure permissions to allow an IAM entity \(such as a user, group, or role\) to create, edit, or delete a service\-linked role\. For more information, see [Service\-Linked Role Permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#service-linked-role-permissions) in the *IAM User Guide*\.
 

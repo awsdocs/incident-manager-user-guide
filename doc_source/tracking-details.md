@@ -11,7 +11,7 @@ The incident details page has seven tabs, making it easier for responders to loc
 + [Metrics](#tracking-details-metrics)
 + [Timeline](#tracking-details-timeline)
 + [Runbook](#tracking-details-runbook)
-+ [Contacts](#tracking-details-contacts)
++ [Engagements](#tracking-details-engagements)
 + [Related items](#tracking-details-related)
 + [Properties](#tracking-details-properties)
 
@@ -70,9 +70,9 @@ To navigate to the runbook definition in Systems Manager, choose the runbook's t
 
 Incident Manager starts runbooks automatically using Systems Manager\. To keep track of runbooks started in Systems Manager, we recommend copying the runbook's ARN \(Amazon Resource Name\) and adding it as a related item in the [Related items](#tracking-details-related) tab of the incident details\.
 
-## Contacts<a name="tracking-details-contacts"></a>
+## Engagements<a name="tracking-details-engagements"></a>
 
-The **Contacts** tab of the incident details drives engagement of responders and teams\. From this tab you can see who has been engaged and responded, who has been engaged but not responded, and responders who are going to be engaged as part of an escalation plan\. Responders can engage other contacts directly from this tab\. To learn more about creating contacts and escalation plans, see the [Contacts](contacts.md) and [Escalation plans](escalation.md) sections of this guide\. 
+The **Engagements** tab of the incident details drives engagement of responders and teams\. From this tab you can see who has been engaged, who has responded, and responders who are going to be engaged as part of an escalation plan\. Responders can engage other contacts directly from this tab\. To learn more about creating contacts and escalation plans, see the [Contacts](contacts.md) and [Escalation plans](escalation.md) sections of this guide\. 
 
 You can configure response plans with contacts and escalation plans to automatically start engagement at the beginning of an incident\. To learn more about configuring response plans, see the [Response plans](response-plans.md) section of this guide\.
 
@@ -84,8 +84,8 @@ You can find information about each contact in the table in the contacts tab\. T
 
 To acknowledge an engagement the responder can do one of the following:
 + Phone call – Press 1 when prompted\.
-+ SMS – Reply to the message with the provided code or enter the provided code on the **Contacts** tab of the incident\.
-+ Email – Enter the provided code on the **Contacts** tab of the incident\.
++ SMS – Reply to the message with the provided code or enter the provided code on the **Engagements** tab of the incident\.
++ Email – Enter the provided code on the **Engagements** tab of the incident\.
 
 ## Related items<a name="tracking-details-related"></a>
 
@@ -108,7 +108,7 @@ The properties tab provides details about the incident\. You can view the follow
 + Start time – The time when the incident was created in Incident Manager\.
 + Resolved time – The time that the incident was resolved in Incident Manager
 + Amazon Resource Name \(ARN\) – The ARN of the incident\. Use this when referencing the incident via chat or CLI commands\.
-+ Response Plan – Identifies the response plan for the selected incident\. Selecting the response plan opens the reponse plan's details page\.
++ Response Plan – Identifies the response plan for the selected incident\. Selecting the response plan opens the response plan's details page\.
 + Parent OpsItem – Identifies the OpsItem created as the parent of the incident\. A parent OpsItem can have multiple related incidents and follow up action items\. Selecting the parent OpsItem opens the parent OpsItems details page in OpsCenter\.
 + Analysis – Identifies the analysis created from this incident\. Create an analysis from a resolved incident to improve your incident response process\. Selecting the analysis opens the analysis details page\. 
 + Owner – The account that the incident was created in\.

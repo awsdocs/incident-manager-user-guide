@@ -93,7 +93,7 @@ The policy grants the `ssm-incidents:ListResponsePlans`, `ssm-incidents:GetRespo
          "Action":[
             "ssm-incidents:GetResponsePlan"
          ],
-         "Resource":"arn:aws:ssm-incidents:::exampleplan"
+         "Resource":"arn:aws:ssm-incidents:*:111122223333:response-plan/exampleplan"
       },
       {
          "Sid":"ManageResponsePlan",
@@ -101,7 +101,7 @@ The policy grants the `ssm-incidents:ListResponsePlans`, `ssm-incidents:GetRespo
          "Action":[
             "ssm-incidents:UpdateResponsePlan"
          ],
-         "Resource":"arn:aws:ssm-incidents:::exampleplan/*"
+         "Resource":"arn:aws:ssm-incidents:*:111122223333:response-plan/exampleplan/*"
       }
    ]
 }
