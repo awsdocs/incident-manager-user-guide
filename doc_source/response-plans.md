@@ -32,7 +32,7 @@ Using the response plan best practices and the Incident Manager console, create 
 
 1. \(Optional\) Provide a brief description of the incident\. 
 
-1. \(Optional\) Provide a dedupe string\. Incident Manager uses the dedupe string to prevent the same root cause from creating multiple incidents in the same account\.
+1. \(Optional\) Provide a dedupe string\. Incident Manager uses the dedupe string to prevent the same root cause from creating multiple incidents in the same account\. Incident Manager deduplicates Incidents created from the same CloudWatch alarm or EventBridge event into the same incident\.
 
 **\(Optional\) Chat channel**
 

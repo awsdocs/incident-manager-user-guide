@@ -1,6 +1,8 @@
 # Incident creation<a name="incident-creation"></a>
 
-AWS Systems Manager Incident Manager tracks incidents\. Using Amazon CloudWatch or Amazon EventBridge, Incident Manager can automatically start incidents\. You can also create incidents manually on the incident list page\. This section describes automatic and manual incident creation\. When you create an incident, Incident Manager creates a parent OpsItem in OpsCenter to track related work and future incident analyses\. Calls to OpsCenter incur costs in Systems Manager\. For more information about OpsCenter pricing, see [Systems Manager pricing](http://aws.amazon.com/systems-manager/pricing/)\.
+AWS Systems Manager Incident Manager tracks incidents\. Using Amazon CloudWatch or Amazon EventBridge, Incident Manager can automatically create incidents\. You can also create incidents manually on the incident list page\. Incident Manager deduplicates Incidents created from the same CloudWatch alarm or EventBridge event into the same incident\.
+
+When you create an incident, Incident Manager creates a parent OpsItem in OpsCenter to track related work and future incident analyses\. Calls to OpsCenter incur costs in Systems Manager\. For more information about OpsCenter pricing, see [Systems Manager pricing](http://aws.amazon.com/systems-manager/pricing/)\.
 
 ## Automatically create incidents with CloudWatch alarms<a name="incident-tracking-auto-alarms"></a>
 

@@ -1,6 +1,6 @@
 # Cross\-service confused deputy prevention<a name="cross-service-confused-deputy-prevention"></a>
 
-The confused deputy problem is an information security issue that occurs when an entity without permission to perform an action callsa more\-privileged entity to perform the action\. This can allow malicious actors to run commands or modify resources they otherwise would not have permission to run or access\.
+The confused deputy problem is an information security issue that occurs when an entity without permission to perform an action calls a more\-privileged entity to perform the action\. This can allow malicious actors to run commands or modify resources they otherwise would not have permission to run or access\.
 
 In AWS, cross\-service impersonation can lead to a confused deputy scenario\. Cross\-service impersonation is when one service \(the *calling service*\) calls another service \(the *called service*\)\. A malicious actor can use the calling service to alter resources in another service using permissions that they normally would not have\.
 
