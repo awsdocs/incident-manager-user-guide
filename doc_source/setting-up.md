@@ -1,4 +1,13 @@
-# AWS Identity and Access Management prerequisites<a name="iam-prereq"></a>
+# Setting up for AWS Systems Manager Incident Manager<a name="setting-up"></a>
+
+We recommend setting up AWS Systems Manager Incident Manager in the account that you use to manage your operations\. Before you use Incident Manager for the first time, complete the following tasks:
+
+**Topics**
++ [Get an AWS account and your root user credentials](#getting-started-signup)
++ [Creating an IAM user](#getting-started-create-iam-user)
++ [Signing in as an IAM user](#getting-started-signin-iam-user)
++ [Creating IAM user access keys](#getting-started-iam-user-access-keys)
++ [Required role for Incident Manager set up](#iam-prereq-service-role)
 
 ## Get an AWS account and your root user credentials<a name="getting-started-signup"></a>
 
@@ -97,3 +106,7 @@ The only time that you can view or download the secret access key is when you cr
 **Related topics**
 + [What is IAM?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*
 + [AWS security credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html) in *AWS General Reference* 
+
+## Required role for Incident Manager set up<a name="iam-prereq-service-role"></a>
+
+Before you begin, your account must have the IAM permission `iam:CreateServiceLinkedRole`\. Incident Manager uses this permission to create the `AWSServiceRoleforIncidentManager` in your account\. To learn more about this service linked role, see [Using service\-linked roles for Incident Manager](using-service-linked-roles.md)\. 

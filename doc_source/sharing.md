@@ -72,7 +72,7 @@ To identify a shared contact or response plan by using the Incident Manager cons
 Contacts, response plans, escalation plans, engagements, and incidents are generally not identifiable as a shared resource in the Incident Manager console\. In places where the Amazon Resource Name \(ARN\) is visible, the ARN contains the owner's account ID\.
 
 **To identify a shared contact or response plan by using the AWS CLI**  
-Use the [ListResponsePlans](TBD) or [ListContacts](TBD) commands\. The command returns the contacts and response plans that you own and contacts and response plans that are shared with you\. The ARN shows the AWS account ID of the contact or response plan owner\.
+Use the [ListResponsePlans](https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListResponsePlans.html) or [ListContacts](https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_SSMContacts_ListContacts.html) commands\. The command returns the contacts and response plans that you own and contacts and response plans that are shared with you\. The ARN shows the AWS account ID of the contact or response plan owner\.
 
 ## Shared contact and response plan permissions<a name="sharing-perms"></a>
 

@@ -1,5 +1,7 @@
 # Resource\-based policy examples for AWS Systems Manager Incident Manager<a name="security_iam_resource-based-policy-examples"></a>
 
+AWS Systems Manager Incident Manager supports resource\-based permissions policies for Incident Manager response plans and contacts\.
+
 Incident Manager doesn't support resource\-based policies that deny access to resources shared using AWS RAM\.
 
 To learn how to create a response plan or contact, see [Response plans](response-plans.md) and [Contacts](contacts.md)\.

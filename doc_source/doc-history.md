@@ -6,3 +6,4 @@
 | [Console engagement acknowledgement](#doc-history) | You can now acknowledge engagements directly from the Incident Manager console\. | August 5, 2021 | 
 | [Properties tab](#doc-history) | Incident Manager introduced a properties tab to the incident details page, providing more information about the incidents, the parent OpsItem, and the related post\-incident analysis\. | August 3, 2021 | 
 | [Incident Manager launch](#doc-history) | Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their AWS hosted applications\. | May 10, 2021 | 
+| [Multi\-runbook support](#doc-history) | Incident Manager now supports running multiple runbooks during an incident for the incident details page\. | January 14, 2021 | 

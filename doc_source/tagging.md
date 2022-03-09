@@ -1,4 +1,4 @@
-# Using tagging with Incident Manager<a name="tagging"></a>
+# Tagging Incident Manager resources<a name="tagging"></a>
 
 Incident Manager supports tagging response plans in a single Region in your management account and tagging contacts and escalation plans in any region in your management account\. Incident Manager sets up the first Region in your replication set as your tagging Region\. Tags must be added to a response from the defined tagging Region\. Use tagging to allocate costs to the correct teams based on resource usage in Incident Manager\. Incident Manager supports tagging on the following resources:
 + Response plans

@@ -1,4 +1,4 @@
-# Setting up cross\-account functionality<a name="xa"></a>
+# Cross\-account incident management<a name="xa"></a>
 
 AWS Systems Manager Incident Manager uses AWS Resource Access Manager \(AWS RAM\) to share Incident Manager resources across management and application accounts\. This section describes cross\-account best practices, how to set up cross\-account functionality for Incident Manager, and known limitations of cross\-account functionality in Incident Manager\.
 
@@ -33,11 +33,11 @@ The following steps describe how to set up and configure Incident Manager resour
 
 1. Add cross\-account cross\-Region functionality to your CloudWatch console\. For steps and information, see [Cross\-Account Cross\-Region CloudWatch Console](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html) in the CloudWatch user guide\. Adding this functionality ensures that the application accounts and management account you've created can view and edit metrics from the incident and analysis dashboards\.
 
-1. Create a cross\-account Amazon EventBridge event bus\. For steps and information, see [Running automations in multiple AWS Regions and accounts](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html)\. You can then use this event bus to create event rules that detect incidents in application accounts and create incidents in the management account\.
+1. Create a cross\-account Amazon EventBridge event bus\. For steps and information, see [Sending and receiving Amazon EventBridge events between AWS accounts](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html)\. You can then use this event bus to create event rules that detect incidents in application accounts and create incidents in the management account\.
 
 ## Limitations<a name="xa-limitations"></a>
 
 The following are known limitations of Incident Manager's cross\-account functionality:
 + Timeline events aren't populated for automation documents run in application accounts\. Updates of automation documents run in application accounts are visible in the runbook tab of the incident\.
-+ SNS topics can't be used cross\-account\. SNS topics must be created in the same Region and account as the response plan it's used it\. We recommend using the management account to create all SNS topics and response plans\. 
++ SNS topics can't be used cross\-account\. SNS topics must be created in the same Region and account as the response plan it's used in\. We recommend using the management account to create all SNS topics and response plans\. 
 + Escalation plans can only be created using contacts in the same account\. A contact that has been shared with you can't be added to an escalation plan in your account\.

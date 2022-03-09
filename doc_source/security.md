@@ -16,5 +16,6 @@ This documentation helps you understand how to apply the shared responsibility m
 + [Compliance validation for AWS Systems Manager Incident Manager](SERVICENAME-compliance.md)
 + [Resilience in AWS Systems Manager Incident Manager](disaster-recovery-resiliency.md)
 + [Infrastructure security in AWS Systems Manager Incident Manager](infrastructure-security.md)
++ [AWS Systems Manager Incident Manager and interface VPC endpoints \(AWS PrivateLink\)](vpc-interface-endpoints.md)
 + [Configuration and vulnerability analysis in Incident Manager](vulnerability.md)
 + [Security best practices in AWS Systems Manager Incident Manager](security-best-practices.md)
