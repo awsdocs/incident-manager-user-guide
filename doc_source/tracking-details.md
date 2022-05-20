@@ -26,15 +26,15 @@ If multiple responders are editing the summary field simultaneously, the respond
 
 The **Recent timeline events** section contains a timeline populated by Incident Manager with the five most recent events\. Use this section to understand the status of the incident and what has recently occurred\. To view a complete timeline, continue to the **Timeline** tab\. 
 
-The overview page also displays the **Current runbook step**\. This step may be an automatic step running in your AWS environment, or it may be a set of manual instructions for responders\. To view the complete runbook, including prior and upcoming steps, continue to the **Runbook** tab\.
+The overview page also displays the **Current runbook step**\. This step may be an automatic step running in your AWS environment, or it may be a set of manual instructions for responders\. To view the complete runbook, including prior and upcoming steps, choose the **Runbook** tab\.
 
 ## Metrics<a name="tracking-details-metrics"></a>
 
-The **Metrics** tab contains vital information about your AWS hosted applications and systems\. Incident Manager uses Amazon CloudWatch to populate the metrics and alarm graphs found on this page\. To learn more about incident management best practices for defining alarms and metrics, see [Monitoring](incident-response.md#incident-response-monitoring) in the *Incident planning* section of this user guide\.
+The **Metrics** tab contains vital information about your AWS hosted applications and systems\. Incident Manager uses Amazon CloudWatch to populate the metrics and alarm graphs found on this tab\. To learn more about incident management best practices for defining alarms and metrics, see [Monitoring](incident-response.md#incident-response-monitoring) in the *Incident planning* section of this user guide\.
 
 **To add metrics**
 + Choose **Add** in the upper\-right corner of this tab\.
-  + Add a metric from an existing CloudWatch dashboard by selecting **From existing CloudWatch dashboard**\.
+  + To add a metric from an existing CloudWatch dashboard, choose **From existing CloudWatch dashboard**\.
 
     1. Choose a **Dashboard**\. This adds all metrics and alarms that are part of the chosen dashboard\.
 
@@ -45,9 +45,9 @@ The **Metrics** tab contains vital information about your AWS hosted application
 
     1. In the navigation pane, choose **Metrics**\. 
 
-    1. On the **All metrics** tab, enter a search term in the search field, such as a metric name or resource name, and press **Enter**\.
+    1. In the **All metrics** tab, enter a search term in the search field, such as a metric name or resource name, and choose **Enter**\.
 
-       For example, if you search for the `CPUUtilization` metric, you see the namespaces and dimensions with this metric\.
+       For example, if you search for the `CPUUtilization` metric, you will see the namespaces and dimensions associated with this metric\.
 
     1. Choose one of the results from your search to view the metrics\.
 
@@ -86,27 +86,21 @@ You can configure response plans with contacts and escalation plans to automatic
 You can find information about each contact in the table\. This table includes the following information:
 + **Name** – Links to the contact's details page that displays the contact's contact methods and engagement plan\.
 + **Escalation plan** – Links to the escalation plan used to engage the contact\.
-+ **Engaged** – Displays when the contact was engaged or when they will be engaged\.
-+ **Acknowledged** – Displays if the contact has acknowledged the engagement\.
++ **Engaged** – Displays when the contact was engaged or when they will be engaged as part of an escalation plan\.
++ **Acknowledged** – Displays whether the contact has acknowledged the engagement\.
 
-To acknowledge an engagement the responder can do one of the following:
-+ Phone call – Press 1 when prompted\.
+To acknowledge an engagement, the responder can do one of the following:
++ Phone call – Enter **1** when prompted\.
 + SMS – Reply to the message with the provided code, or enter the provided code on the **Engagements** tab of the incident\.
 + Email – Enter the provided code on the **Engagements** tab of the incident\.
 
 ## Related items<a name="tracking-details-related"></a>
 
-The **Related Items** tab contains useful resources available for responders to use during the mitigation of the incident\. These resources can be an ARN or a direct link to an external resource\. The table displays a descriptive title and ARN or link details\.
+The **Related Items** tab is used to collect resources related to incident mitigation\. These resources can be ARNs, links to external resources, or files uploaded to Amazon S3 buckets\. The table displays a descriptive title and either an ARN, a link, or bucket details\. Before using S3 buckets, review [Security Best Practices for Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html)\.
 
-**Adding a resource**
+When uploading files to an Amazon S3 bucket, versioning is either enabled or suspended on that bucket\. When versioning is enabled on the bucket, files uploaded with the same name as an existing file are added as a new version of the file\. If versioning is suspended, files uploaded with the same name as an existing file overwrite the existing file\. To learn more about versioning, see [Using versioning in S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html)\.
 
-1. Choose **Add** in the upper\-right corner of the **Related items** tab\.
-
-1. Enter a descriptive **Title**\. This title helps responders understand what the ARN or link is\.
-
-1. For **Detail**, enter an ARN or a link to an external resource\.
-
-1. Choose **Add**\.
+When removing a file related item, the file is removed from the incident but is not removed from the Amazon S3 bucket\. To learn more about removing objects from an Amazon S3 bucket, see [Deleting Amazon S3 objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjects.html)\.
 
 ## Properties<a name="tracking-details-properties"></a>
 

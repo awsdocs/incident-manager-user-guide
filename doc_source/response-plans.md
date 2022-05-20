@@ -51,7 +51,7 @@ Incident Manager must have permissions to publish to the chat channel's SNS topi
    + Choose **Select an existing runbook**\. Select the **Owner**, **Runbook**, and **Version**\. For information about runbook creation, see [Runbooks and automation](runbooks.md)\.
    + Choose **Clone runbook from template**\. Enter a descriptive runbook name\. 
 
-1. Either choose an existing role or use the following steps to create a new role\. The role must allow the `ssm:StartAutomationExecution` action for your specific runbook\. For the runbook to work across accounts it must also allow the `sts:AssumeRole` action for the `AWS-SystemsManager-AutomationExecutionRole` role that you created during [Cross\-account incident management](xa.md)\.
+1. Either choose an existing role or use the following steps to create a new role\. The role must allow the `ssm:StartAutomationExecution` action for your specific runbook\. For the runbook to work across accounts it must also allow the `sts:AssumeRole` action for the `AWS-SystemsManager-AutomationExecutionRole` role that you created during [Cross\-Region and cross\-account incident management](incident-manager-cross-account-cross-region.md)\.
 
    1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -78,6 +78,16 @@ Incident Manager must have permissions to publish to the chat channel's SNS topi
              "Effect": "Allow",
              "Resource": "arn:aws:iam::*:role/AWS-SystemsManager-AutomationExecutionRole",
              "Action": "sts:AssumeRole"
+           },
+           {
+             "Effect": "Allow",
+             "Resource": "arn:aws:ssm-incidents:*:*:*",
+             "Action": "ssm-incidents:*"
+           },
+           {
+             "Effect": "Allow",
+             "Resource": "arn:aws:ssm-contacts:*:*:*",
+             "Action": "ssm-contacts:*"
            }
          ]
        }

@@ -1,4 +1,4 @@
-# On\-call rotations<a name="tutorials-oncall"></a>
+# Configuring on\-call rotations<a name="tutorials-oncall"></a>
 
 An on\-call rotation uses a schedule to rotate through a group of on\-call contacts, ensuring that there is always an contact on\-call\. On\-call contacts are tasked with monitoring and immediately responding when an incident happens\. A new contact is assigned as the on\-call contact according to the schedule you set\. Rotating the on\-call contact prevents alert fatigue\. This tutorial walks you through how to configure an on\-call rotation using Amazon S3, AWS CloudFormation, and AWS Systems Manager Incident Manager\. 
 
@@ -103,7 +103,7 @@ You've now completed set up of the on\-call rotation script\. This script automa
 
 ## Update an on\-call rotation<a name="tutorials-oncall-reconfigure"></a>
 
-In  case that your on\-call changes you can update the parameters of the CloudFormation stack to represent the new on\-call rotation\. Use the following steps to update any of the on\-call rotation parameters\.
+In case that your on\-call changes you can update the parameters of the CloudFormation stack to represent the new on\-call rotation\. Use the following steps to update any of the on\-call rotation parameters\.
 
 1. Open the CloudFormation console at [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/)\.
 

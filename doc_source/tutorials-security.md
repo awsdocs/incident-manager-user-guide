@@ -1,4 +1,4 @@
-# Manage security incidents<a name="tutorials-security"></a>
+# Managing security incidents<a name="tutorials-security"></a>
 
 You can use AWS Security Hub, Amazon EventBridge, and Incident Manager together to identify and manage security incidents in your AWS\-hosted\-applications\. This tutorial walks you through configuring an EventBridge rule that creates an incident based on Security Hub automatically sent findings\.
 

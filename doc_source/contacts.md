@@ -6,6 +6,7 @@ AWS Systems Manager Incident Manager contacts are responders to incidents\. A co
 + [Contact channels](#contacts-channels)
 + [Engagement plans](#contacts-engage)
 + [Define a contact](#contacts-define)
++ [Import contact details to your address book](#contacts-details-file)
 
 ## Contact channels<a name="contacts-channels"></a>
 
@@ -94,3 +95,13 @@ To engage a contact you must define an engagement plan\.
 1. Choose **Finish**\.
 
 After you define a contact and activate its contact channels, you can add contacts to escalation plans to form a chain of escalation\. To learn more about escalation plans, see [Escalation plans](escalation.md)\. You can add contacts to a response plan for direct engagement\. To learn more about creating response plans, see [Response plans](response-plans.md)\.
+
+## Import contact details to your address book<a name="contacts-details-file"></a>
+
+When an incident is created, Incident Manager can notify responders by using voice or SMS notifications\. To ensure that responders see that the call or SMS notification is from Incident Manager, we recommend that all responders download the Incident Manager [virtual card format \(\.vcf\)](https://docs.fileformat.com/email/vcf/) file to the address book on their mobile devices\. The file is hosted in Amazon CloudFront and is available in the AWS commercial partition\. 
+
+**To download the Incident Manager \.vcf file**
+
+1. On your mobile device, either choose or enter the following URL: [https://d26vhuvd5b89k2\.cloudfront\.net/aws\-incident\-manager\.vcf](https://d26vhuvd5b89k2.cloudfront.net/aws-incident-manager.vcf)\. 
+
+1. Save or import the file to the address book on your mobile device\.

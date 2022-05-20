@@ -1,6 +1,25 @@
-# Cross\-account incident management<a name="xa"></a>
+# Cross\-Region and cross\-account incident management<a name="incident-manager-cross-account-cross-region"></a>
 
-AWS Systems Manager Incident Manager uses AWS Resource Access Manager \(AWS RAM\) to share Incident Manager resources across management and application accounts\. This section describes cross\-account best practices, how to set up cross\-account functionality for Incident Manager, and known limitations of cross\-account functionality in Incident Manager\.
+You can configure Incident Manager, a capability of AWS Systems Manager, to work with multiple AWS Regions and accounts\. This section describes cross\-Region and cross\-account best practices, set up steps, and known limitations\. 
+
+**Topics**
++ [Cross\-Region incident management](#incident-manager-cross-region)
++ [Cross\-account incident management](#incident-manager-cross-account)
+
+## Cross\-Region incident management<a name="incident-manager-cross-region"></a>
+
+Incident Manager supports automated and manual incident creation in [several](https://docs.aws.amazon.com/general/latest/gr/incident-manager.html) AWS Regions\. When you initially onboard with Incident Manager by using the **Get prepared** wizard, you can specify up to three AWS Regions for your *replication set*\. For incidents automatically created by Amazon CloudWatch alarms or Amazon EventBridge events, Incident Manager attempts to create an incident in the same AWS Region as the event rule or alarm\. If Incident Manager isn't available in the AWS Region, CloudWatch or EventBridge will automatically create the incident in one of the available Regions specified in your replication set\. 
+
+**Important**  
+Note the following important details\.  
+We recommend that you specify at least two AWS Regions in your replication set\. If you don't specify at least two Regions, the system will fail to create incidents during the period when Incident Manager is unavailable\.
+Incidents created by a cross\-Region failover don't invoke runbooks specified in response plans\.
+
+For more information about on\-boarding with Incident Manager and specifying additional Regions, see [Getting prepared with Incident Manager](getting-started.md)\.
+
+## Cross\-account incident management<a name="incident-manager-cross-account"></a>
+
+Incident Manager uses AWS Resource Access Manager \(AWS RAM\) to share Incident Manager resources across management and application accounts\. This section describes cross\-account best practices, how to set up cross\-account functionality for Incident Manager, and known limitations of cross\-account functionality in Incident Manager\.
 
 A management account is the account that you perform operations management from\. The management account owns the response plans, contacts, escalation plans, runbooks, and other AWS Systems Manager resources\. 
 
@@ -8,14 +27,14 @@ An application account is the account that owns the resources that make up your 
 
 AWS RAM uses resource shares to share resources between accounts\. You can share the response plan and contact resources between accounts in AWS RAM\. By sharing these resources, application accounts and management accounts can interact with engagements and incidents\. Sharing a response plan shares all past and future incidents created using that response plan\. Sharing a contact shares all past and future engagements of the contact or response plan\.
 
-## Best practices<a name="xa-best-practices"></a>
+### Best practices<a name="cross-account-cross-region-best-practices"></a>
 
 Follow these best practices when sharing your Incident Manager resources across accounts:
 + Regularly update the resource share with response plans and contacts\.
 + Regularly review resource share principals\. 
 + Set up Incident Manager, runbooks, and chat channels in your management account\.
 
-## Set up and configuration<a name="xa-setup"></a>
+### Set up and configuration<a name="cross-account-cross-region-setup"></a>
 
 The following steps describe how to set up and configure Incident Manager resources and use them for cross\-account functionality\. You may have configured some services and resources for cross\-account functionality in the past\. Use these steps as a checklist of requirements before starting your first incident using cross\-account resources\.
 
@@ -35,9 +54,10 @@ The following steps describe how to set up and configure Incident Manager resour
 
 1. Create a cross\-account Amazon EventBridge event bus\. For steps and information, see [Sending and receiving Amazon EventBridge events between AWS accounts](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html)\. You can then use this event bus to create event rules that detect incidents in application accounts and create incidents in the management account\.
 
-## Limitations<a name="xa-limitations"></a>
+### Limitations<a name="cross-account-cross-region-limitations"></a>
 
 The following are known limitations of Incident Manager's cross\-account functionality:
++ The account that creates a post\-incident analysis is the only account that can view and change it\. If you use an application account to create a post\-incident analysis, only members of that account can view and change it\. The same is true if you use a management account to create a post\-incident analysis\.
 + Timeline events aren't populated for automation documents run in application accounts\. Updates of automation documents run in application accounts are visible in the runbook tab of the incident\.
 + SNS topics can't be used cross\-account\. SNS topics must be created in the same Region and account as the response plan it's used in\. We recommend using the management account to create all SNS topics and response plans\. 
 + Escalation plans can only be created using contacts in the same account\. A contact that has been shared with you can't be added to an escalation plan in your account\.

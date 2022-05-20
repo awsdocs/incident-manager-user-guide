@@ -1,8 +1,17 @@
 # Incident creation<a name="incident-creation"></a>
 
-AWS Systems Manager Incident Manager tracks incidents\. Using Amazon CloudWatch or Amazon EventBridge, Incident Manager can automatically create incidents\. You can also create incidents manually on the incident list page\. Incident Manager deduplicates Incidents created from the same CloudWatch alarm or EventBridge event into the same incident\.
+Incident Manager, a capability of AWS Systems Manager, helps you manage and quickly respond to incidents\. You can configure Amazon CloudWatch and Amazon EventBridge to automatically create incidents based on CloudWatch alarms and EventBridge events\. You can also create incidents manually on the incident list page or by using the [StartIncident](https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_StartIncident.html) API action from the AWS CLI or the AWS SDK\. Incident Manager deduplicates incidents created from the same CloudWatch alarm or EventBridge event into the same incident\.
 
-When you create an incident, Incident Manager creates a parent OpsItem in OpsCenter to track related work and future incident analyses\. Calls to OpsCenter incur costs in Systems Manager\. For more information about OpsCenter pricing, see [Systems Manager pricing](http://aws.amazon.com/systems-manager/pricing/)\.
+For incidents automatically created by CloudWatch alarms or EventBridge events, Incident Manager attempts to create an incident in the same AWS Region as the event rule or alarm\. In the event that Incident Manager is not available in the AWS Region, CloudWatch or EventBridge automatically create the incident in one of the available regions specified in your replication set\. For more information, see [Cross\-Region and cross\-account incident management](incident-manager-cross-account-cross-region.md)\. 
+
+When the system creates an incident, Incident Manager automatically collects information about the AWS resources involved in the incident and adds this information to the **Related items** tab\. If you specified a runbook in your response plan, when the system creates an incident, Incident Manager can send the information about the AWS resources involved in the incident to the runbook\. The system can then target those resources when it initiates the runbook and attempts to remediate the issue\.
+
+When the system creates an incident, it also creates a parent operational workitem \(OpsItem\) in OpsCenter, a component of Systems Manager, and links it to the incident as a related item\. You can use this OpsItem to track related work and future incident analyses\. Calls to OpsCenter incur costs\. For more information about OpsCenter pricing, see [Systems Manager pricing](http://aws.amazon.com/systems-manager/pricing/)\.
+
+**Important**  
+Note the following important details\.  
+In the event that Incident Manager is not available, the system can only fail over and create incidents in other AWS Regions if you have specified at least two Regions in your replication set\. For information about configuring a replication set, see [Getting prepared with Incident Manager](getting-started.md)\.
+Incidents created by a cross\-Region failover don't invoke runbooks specified in response plans\.
 
 ## Automatically create incidents with CloudWatch alarms<a name="incident-tracking-auto-alarms"></a>
 
@@ -13,14 +22,7 @@ CloudWatch uses your CloudWatch metrics to alert you about changes in your envir
 
 **To create an alarm with a **Start incident** action**
 
-1. Decide what type of alarm you're creating and follow the steps found in the following sections of the CloudWatch user guide\.
-   + [Create an Alarm Based on a Static Threshold]()
-   + [Creating an Alarm Based on Anomaly Detection]()
-   + [Creating an Alarm Based on a Metric Math Expression]()
-   + [Creating a Composite Alarm](AmazonCloudWatch/latest/monitoring/Create_Composite_Alarm.html)
-   + [Creating a CPU Usage Alarm]()
-   + [Creating a Load Balancer Latency Alarm]()
-   + [Creating a Storage Throughput Alarm](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/US_AlarmAtThresholdEBS.html)
+1. Create an alarm in CloudWatch\. For more information, see [Using Amazon CloudWatch alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html) in the *Amazon CloudWatch User Guide*\.
 
 1. When choosing the action for the alarm to perform, select **Add Systems Manager action**\.
 

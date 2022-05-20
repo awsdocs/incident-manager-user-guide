@@ -59,7 +59,7 @@ The Incident Manager service supports only two types of resource\-based policies
 
 Incident Manager doesn't support policies that deny access to resources shared using AWS RAM\.
 
-To learn how to attach a resource\-based policy to a response plan or contact, see [Cross\-account incident management](xa.md)\.
+To learn how to attach a resource\-based policy to a response plan or contact, see [Cross\-Region and cross\-account incident management](incident-manager-cross-account-cross-region.md)\.
 
 ### Resource\-based policy examples within Incident Manager<a name="security_iam_service-with-iam-resource-based-policies-examples"></a>
 
@@ -148,7 +148,7 @@ Incident Manager resources are used to create incidents, collaborate in chat cha
 
 |  |  | 
 | --- |--- |
-|  Supports policy condition keys  |    No   | 
+|  Supports service\-specific policy condition keys  |    No   | 
 
 Administrators can use AWS JSON policies to specify who has access to what\. That is, which **principal** can perform **actions** on what **resources**, and under what **conditions**\.
 
