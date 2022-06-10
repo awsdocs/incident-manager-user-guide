@@ -5,6 +5,7 @@ A key feature of AWS Systems Manager Incident Manager is the ability to directly
 **Topics**
 + [Set up an AWS Chatbot client](#chat-create)
 + [Configuring SNS permissions](#chat-sns)
++ [Encrypting Amazon SNS topics used by Incident Manager](#chat-sns-encrypting)
 + [Interacting through chat](#chat-interact)
 + [Best practices](#chat-best-practices)
 
@@ -135,6 +136,12 @@ The AWS service ssm\-incidents\.amazonaws\.com must have permissions to publish 
 1. Choose **Save changes**\.
 
 Use the previous steps to update each SNS topic related to the configure AWS Chatbot client\.
+
+## Encrypting Amazon SNS topics used by Incident Manager<a name="chat-sns-encrypting"></a>
+
+You can encrypt Amazon SNS topics used by Incident Manager by using an AWS Key Management Service \(AWS KMS\) Customer Managed Key \(CMK\)\. For more information, see [Creating keys](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
+
+To configure Incident Manager with the required `kms:GenerateDataKey` and `kms:Decrypt` permissions, see [Enable compatibility between event sources from AWS services and encrypted topics](https://docs.aws.amazon.com/sns/latest/dg/sns-key-management.html#compatibility-with-aws-services) in the *Amazon Simple Notification Service Developer Guide*\.
 
 ## Interacting through chat<a name="chat-interact"></a>
 
