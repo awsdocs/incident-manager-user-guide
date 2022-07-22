@@ -11,6 +11,7 @@ The incident details page has seven tabs, making it easier for responders to loc
 + [Metrics](#tracking-details-metrics)
 + [Timeline](#tracking-details-timeline)
 + [Runbooks](#tracking-details-runbook)
++ [Tags](#tracking-details-tags)
 + [Engagements](#tracking-details-engagements)
 + [Related items](#tracking-details-related)
 + [Properties](#tracking-details-properties)
@@ -76,6 +77,10 @@ To navigate to a runbook definition in Systems Manager, choose the runbook's tit
 The **Runbook steps** section displays the list of steps that the selected runbook automatically takes or responders manually perform\. The steps expand as they become the current step, displaying information required to complete the step, or details about what the step does\. Automatic runbook steps resolve after the automation is complete\. Manual steps require the responders to choose **Next step** at the bottom of each step\. After a step is complete, the step output appears as a dropdown\.
 
 To cancel a runbook execution, choose **Cancel runbook**\. This will stop the execution of the runbook and not complete any further steps in the runbook\.
+
+## Tags<a name="tracking-details-tags"></a>
+
+The **Tags** section displays the tag keys and values associated with the incident record\. For more information about tags in Incident Manager, see [Tagging Incident Manager resources](tagging.md)\.
 
 ## Engagements<a name="tracking-details-engagements"></a>
 

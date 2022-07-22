@@ -1,6 +1,6 @@
 # Response plans<a name="response-plans"></a>
 
-Use response plans to plan for incidents and define how to respond to incidents\. Response plans provide a template for when an incident occurs\. This template includes information about who to engage, the expected severity of the event, automatic runbooks to initiate, and metrics to monitor\. To create a response plan, use the following steps\.
+Use response plans to plan for incidents and define how to respond to incidents\. Response plans provide a template for when an incident occurs\. This template includes information about who to engage, the expected severity of the event, automatic runbooks to initiate, and metrics to monitor\. 
 
 ## Best practices<a name="response-plan-best-practices"></a>
 
@@ -10,9 +10,9 @@ Taking the time to plan for incidents ahead of time saves operational time for t
 + **Runbooks** – Developing runbooks that provide repeatable and understandable steps helps reduce the stress responders experience during incidents\.
 + **Collaboration** – Use chat channels to streamline communication during incidents\. Chat channels help responders stay up to date with information and also share information with other responders\. 
 
-## Response plan creation<a name="response-plans-create"></a>
+## Create a response plan<a name="response-plans-create"></a>
 
-Using the response plan best practices and the Incident Manager console, create dynamic response plans to automate incident response\.
+Use the following procedure to create a response plan and automate incident response\.
 
 **Response plan details**
 
@@ -30,9 +30,11 @@ Using the response plan best practices and the Incident Manager console, create 
 
 1. To indicate the potential scope of the incident, choose an **Impact**\.
 
-1. \(Optional\) Provide a brief description of the incident\. 
+1. \(Optional\) Provide a brief summary of the incident\. 
 
 1. \(Optional\) Provide a dedupe string\. Incident Manager uses the dedupe string to prevent the same root cause from creating multiple incidents in the same account\. Incident Manager deduplicates Incidents created from the same CloudWatch alarm or EventBridge event into the same incident\.
+
+1. \(Optional\) Provide tag keys and values to assign to incidents created from this response plan\. You must have `TagResource` permission for the incident record resource to be able to set incident tags within the response plan\.
 
 **\(Optional\) Chat channel**
 

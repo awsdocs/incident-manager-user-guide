@@ -1,9 +1,20 @@
 # Tagging Incident Manager resources<a name="tagging"></a>
 
-Incident Manager supports tagging response plans in a single Region in your management account and tagging contacts and escalation plans in any region in your management account\. Incident Manager sets up the first Region in your replication set as your tagging Region\. Tags must be added to a response from the defined tagging Region\. Use tagging to allocate costs to the correct teams based on resource usage in Incident Manager\. Incident Manager supports tagging on the following resources:
-+ Response plans
-+ Contacts
+Tags are optional metadata that you can assign to your Incident Manager response plans, incident records, and contacts in the AWS Regions specified in your replication set\. Tags enable you to categorize and control access to these resources in different ways\. Each tag consists of a key and an optional value, both of which you define\. We recommend that you devise a set of tag keys that meets your needs for each Incident Manager resource type\. Using a consistent set of tag keys makes it easier for you to manage these resources and manage access to them\. You can search and filter resources based on tags\. For more information about controlling access to resources by using tags, see [Controlling access to AWS resources using tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html) in the *IAM User Guide*\.
 
-To tag a resource while you're creating the resource, on the create resource page, search for the tag **Key** or **Value** and choose **Add new tag**\. 
+You can specify tags in the **Incident default** section when creating a response plan\. These tags are applied to the incident record when an incident is created using the response plan\.
 
-To add or remove tags from a resource after it's created, in the **Tags** section of the edit resource page, search for the tags **Key** or **Value**\. After searching for the tag, choose **Add new tag**\. To remove a tag, choose **Remove**\. After you have added or removed tags, choose **Update**\.
+**Note**  
+Tags don't have any semantic meaning\. They are interpreted strictly as a string of characters\.
+
+You can add or remove tags by using the Incident Manager console\. The following screenshot shows the tags section when creating a new response plan\.
+
+![\[A screenshot of the tags section in the Incident Manager console.\]](http://docs.aws.amazon.com/incident-manager/latest/userguide/images/tags.png)
+
+To work with tags programmatically, use the following API actions:
++ [TagResource](https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_TagResource.html)
++ [UntagResource](https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_UntagResource.html)
++ [ListTagsForResource](https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_ListTagsForResource.html)
+
+**Important**  
+Tags applied to response plans, incident records, and contacts can only be viewed and modified from the resource owner account\.

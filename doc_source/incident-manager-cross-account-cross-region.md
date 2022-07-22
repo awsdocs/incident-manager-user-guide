@@ -61,3 +61,4 @@ The following are known limitations of Incident Manager's cross\-account functio
 + Timeline events aren't populated for automation documents run in application accounts\. Updates of automation documents run in application accounts are visible in the runbook tab of the incident\.
 + SNS topics can't be used cross\-account\. SNS topics must be created in the same Region and account as the response plan it's used in\. We recommend using the management account to create all SNS topics and response plans\. 
 + Escalation plans can only be created using contacts in the same account\. A contact that has been shared with you can't be added to an escalation plan in your account\.
++ Tags applied to response plans, incident records, and contacts can only be viewed and modified from the resource owner account\.

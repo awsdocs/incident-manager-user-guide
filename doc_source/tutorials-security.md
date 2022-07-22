@@ -16,34 +16,48 @@ For this tutorial, we use a predefined pattern to create the EventBridge rule\. 
 
 1. Open the EventBridge console at [ https://console\.aws\.amazon\.com/events/](https://console.aws.amazon.com/events/)\.
 
-1. In the navigation pane, under **Events**, choose **Rules**\.
+1. In the navigation pane, choose **Rules**\.
 
 1. Choose **Create rule**\.
 
 1. Enter a **Name** and **Description** for the rule\.
 
-1. For **Define pattern**, choose **Event pattern**\.
+   A rule can't have the same name as another rule in the same Region and on the same event bus\.
 
-1. For **Event matching pattern**, choose **Pre\-defined pattern by service**\.
+1. For **Event bus**, choose **default**\.
 
-1. For **Service provider**, choose **AWS**\.
+1. For **Rule type**, choose **Rule with an event pattern**\.
 
-1. For **Service name**, choose **Security Hub**\.
+1. Choose **Next**\.
+
+1. For **Event source**, choose **AWS events or EventBridge partner events**\.
+
+1. For **Event pattern**, choose **Event pattern form**\.
+
+1. For **Event source**, choose **AWS services**\.
+
+1. For **AWS service**, choose **Security Hub**\.
 
 1. For **Event type**, choose **Security Hub Findings \- Imported**\.
 
 1. By default, EventBridge configures the event pattern without any filter values\. For each attribute, the **Any *attribute name*** option is selected\. Update these filters to create incidents based on the security findings that most impact your environment\. 
 
-1. Under **Select targets**, choose **Incident Manager response plan**\.
+1. Click **Next**\.
+
+1. For **Target types**, choose **AWS service**\.
+
+1. For **Select a target**, choose **Incident Manager response plan**\.
 
 1. For **Response plan**, choose a response plan to use as a template for created incidents\.
 
-1. EventBridge can create the IAM role needed for your rule to run:
-   + To create an IAM role automatically, choose **Create a new role for the specific resource**
+1. EventBridge can create the IAM role needed for your rule to run\.
+   + To create an IAM role automatically, choose **Create a new role for the specific resource**\.
    + To use an IAM role that already exists in your account, choose **Use existing role**\.
 
 1. \(Optional\) Enter one or more tags for the rule\.
 
-1. Choose **Create**\.
+1. Choose **Next**\.
+
+1. Review the details of the rule and choose **Create rule**\.
 
 Now that you've created this EventBridge rule, security findings that match the attribute values you defined will create incidents in Incident Manager\. You can triage, manage, monitor, and create post\-incident analysis from these incidents\.
