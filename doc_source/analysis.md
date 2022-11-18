@@ -37,7 +37,7 @@ Some key time points you can consider when analyzing a metric graph:
 
 **Limitations**
 + CloudWatch alarms and metric expressions aren't imported from an incident\.
-+ Metrics that are in a region that Incident Manager doesn't support aren't imported from the incident\.
++ Metrics that are in a Region that Incident Manager doesn't support aren't imported from the incident\.
 + Metrics in application accounts require configuration of the `CloudWatch-CrossAccountSharingRole` prior to creating the analysis\. For more information about the role, see [Cross\-Account Cross\-Region CloudWatch console](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html) in the CloudWatch user guide\.
 
 ### Timeline<a name="analysis-details-timeline"></a>

@@ -28,7 +28,7 @@ The `OncallRotationScript` zip file contains both the CloudFormation YAML templa
 
 1. Give the bucket a unique name\.
 
-1. Select a region\. This must be the same region that you create your AWS CloudFormation stack in later in this tutorial\.
+1. Select a Region\. This must be the same Region that you create your AWS CloudFormation stack in later in this tutorial\.
 
 1. Choose **Block *all* public access**\.
 
@@ -51,7 +51,7 @@ Note the bucket name and the object key\. You will use these while configuring y
 
 **Configure and deploy the CloudFormation stack**
 
-1. Open the CloudFormation console at [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/)\.
+1. Open the AWS CloudFormation console at [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/)\.
 
 1. Choose **Stacks** from the left navigation menu\.
 
@@ -105,7 +105,7 @@ You've now completed set up of the on\-call rotation script\. This script automa
 
 In case that your on\-call changes you can update the parameters of the CloudFormation stack to represent the new on\-call rotation\. Use the following steps to update any of the on\-call rotation parameters\.
 
-1. Open the CloudFormation console at [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/)\.
+1. Open the AWS CloudFormation console at [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/)\.
 
 1. Select the stack that you created when you set up the on\-call rotation\. 
 
@@ -129,7 +129,7 @@ In case that your on\-call changes you can update the parameters of the CloudFor
 
 If you no longer wish to use the on\-call rotation, you can delete the CloudFormation stack to clean up all of the resources created using CloudFormation\. Deleting the stack won't delete the contacts or escalation plan related to the on\-call rotation\.
 
-1. Open the CloudFormation console at [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/)\.
+1. Open the AWS CloudFormation console at [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/)\.
 
 1. Select the stack that you created while setting up the on\-call rotation\.
 

@@ -1,14 +1,14 @@
 # Response plans<a name="response-plans"></a>
 
-Use response plans to plan for incidents and define how to respond to incidents\. Response plans provide a template for when an incident occurs\. This template includes information about who to engage, the expected severity of the event, automatic runbooks to initiate, and metrics to monitor\. 
+ Response plans let you plan for how to respond to an incident that impacts your users\. A response plan works as a template that includes information about who to engage, the expected severity of the event, automatic runbooks to initiate, and metrics to monitor\. 
 
 ## Best practices<a name="response-plan-best-practices"></a>
 
-Taking the time to plan for incidents ahead of time saves operational time for teams later down the road\. Teams should consider the following best practices when designing a response plan\.
-+ **Streamlined engagement** – Identify the most appropriate team for an incident\. Engaging wide distribution lists or the wrong teams causes confusion and wastes responder time during incidents\. 
-+ **Reliable escalation** – Using escalation plans rather than contacts ensures that responders are effectively and reliably engaged\. Even with the best intentions, responders are sometimes unreachable\. Having a backup responder configured in an escalation plan covers these scenarios\. 
-+ **Runbooks** – Developing runbooks that provide repeatable and understandable steps helps reduce the stress responders experience during incidents\.
-+ **Collaboration** – Use chat channels to streamline communication during incidents\. Chat channels help responders stay up to date with information and also share information with other responders\. 
+You can reduce the impact on incidents on your teams when you plan for incidents ahead of time\. Teams should consider the following best practices when you design a response plan\.
++ **Streamlined engagement** – Identify the most appropriate team for an incident\. If you engage too wide a distribution list, or if you engage the wrong teams, you can cause confusion and waste responder time during an incident\. 
++ **Reliable escalation** – Use escalation plans rather than contacts to ensure that you engage responders effectively and reliably\. Even with the best intentions, responders are sometimes unreachable\. You should configure backup responders in your escalation plan to cover these scenarios\. 
++ **Runbooks** – Use runbooks to provide repeatable, understandable steps that reduce the stress a responder experiences during an incident\.
++ **Collaboration** – Use chat channels to streamline communication during incidents\. Chat channels help responders stay up to date with information\. They can also share information with other responders through these channels\. 
 
 ## Create a response plan<a name="response-plans-create"></a>
 
@@ -16,56 +16,71 @@ Use the following procedure to create a response plan and automate incident resp
 
 **Response plan details**
 
-1. Open the [Incident Manager console](https://console.aws.amazon.com/systems-manager/incidents/home), and in the left navigation, choose **Response plans**\.
+1. Open the [Incident Manager console](https://console.aws.amazon.com/systems-manager/incidents/home), and in the navigation pane, choose **Response plans**\.
 
 1. Choose **Create response plan**\.
 
-1. Enter a unique and identifiable response plan **Name**\.
+1. For **Name**, enter a unique and identifiable response plan name to use in the Amazon Resource Name \(ARN\) for the response plan\.
 
-1. \(Optional\) Enter a **Display name**\. Use the display name to provide a more user\-friendly name to the response plan\.
+1. \(Optional\) For **Display name**, enter a more human readable name to help identify the response plan when you create incidents\.
 
 **Incident defaults**
 
-1. Enter an incident title\. The incident title helps to identify an incident on the incidents home page\.
+1. For **Title**, enter a title for this incident to help you identify it on the Incident Manager home page\.
 
-1. To indicate the potential scope of the incident, choose an **Impact**\.
+1. For **Impact**, choose an impact level to indicate the potential scope of an incidents created from this response plan, such as **Critical** or **Low**\. For information about impact ratings in Incident Manager, see [Triage](incident-lifecycle.md#triage)\.
 
-1. \(Optional\) Provide a brief summary of the incident\. 
+1. \(Optional\) For **Summary**, enter a brief summary the type of incidents created from this response plan\.
 
-1. \(Optional\) Provide a dedupe string\. Incident Manager uses the dedupe string to prevent the same root cause from creating multiple incidents in the same account\. Incident Manager deduplicates Incidents created from the same CloudWatch alarm or EventBridge event into the same incident\.
+1. \(Optional\) For **Dedupe string**, enter a dedupe string that Incident Manager uses to prevent the same root cause from creating multiple incidents in the same account\. For example, Incident Manager deduplicates incidents created from the same CloudWatch alarm or EventBridge event into a single incident\.
 
-1. \(Optional\) Provide tag keys and values to assign to incidents created from this response plan\. You must have `TagResource` permission for the incident record resource to be able to set incident tags within the response plan\.
+1. \(Optional\) Under **Tags**, add tag keys and values to assign to incidents created from this response plan\. You must have the `TagResource` permission for the incident record resource to set incident tags within the response plan\.
 
 **\(Optional\) Chat channel**
 
-1. Choose a chat channel for the incident responders to interact in during an incident\. For more information about chat channels, see [Chat channels](chat.md)\. 
+1. For **Chat channel**, select a channel where responders can communicate during an incident\. For more information about chat channels, see [Chat channels](chat.md)\. 
 **Important**  
-Incident Manager must have permissions to publish to the chat channel's SNS topic\. Without permissions to publish to the SNS topic, you can't add it to the response plan\. Incident Manager verifies permissions by publishing a test notification to the SNS topic\.
+Incident Manager must have permissions to publish to the chat channel's simple notification service \(SNS\) topic\. Without permissions to publish to that SNS topic, you can't add it to the response plan\. Incident Manager publishes a test notification to the SNS topic to verify permissions\.
 
-1. \(Optional\) Choose additional SNS topics to publish to during the incident\. Adding SNS topics in multiple Regions increases redundancy in case a Region is down at the time of the incident\.
+1. For Chat channel SNS topics, choose additional SNS topics to publish to during the incident\. Adding SNS topics in multiple AWS Regions increases redundancy in case a Region is down at the time of the incident\.
 
 **\(Optional\) Engagements**
-+ For **Engagement**, choose any number of contacts and escalations plans\. For information about contact and escalation plan creation, see [Contacts](contacts.md) and [Escalation plans](escalation.md)\.
++ For **Engagements**, choose any number of contacts and escalations plans\. For information about contact and escalation plan creation, see [Contacts](contacts.md) and [Escalation plans](escalation.md)\.
 
 **\(Optional\) Runbook**
 
-1. To select a **Runbook**:
-   + Choose **Select an existing runbook**\. Select the **Owner**, **Runbook**, and **Version**\. For information about runbook creation, see [Runbooks and automation](runbooks.md)\.
-   + Choose **Clone runbook from template**\. Enter a descriptive runbook name\. 
+1. To select a **Runbook**, do one of the following:
+   + Choose **Clone runbook from template**\. For **Runbook name**, enter a descriptive name for the new runbook\. 
+   + Choose **Select an existing runbook**\. Select the **Owner**, **Runbook**, and **Version** to use\. For information about runbook creation, see [Runbooks and automation](runbooks.md)\.
 
-1. Either choose an existing role or use the following steps to create a new role\. The role must allow the `ssm:StartAutomationExecution` action for your specific runbook\. For the runbook to work across accounts it must also allow the `sts:AssumeRole` action for the `AWS-SystemsManager-AutomationExecutionRole` role that you created during [Cross\-Region and cross\-account incident management](incident-manager-cross-account-cross-region.md)\.
+1. For **Role name**, select a role that contains the permissions needed to run the Automation runbook you selected\. 
+
+   At minimum, the role must allow the `ssm:StartAutomationExecution` action for your specific runbook\. For the runbook to work across accounts, the role must also allow the `sts:AssumeRole` action for the `AWS-SystemsManager-AutomationExecutionRole` role that you created during [Cross\-Region and cross\-account incident management](incident-manager-cross-account-cross-region.md)\. 
+
+   Depending on the runbook you selected, the role might require other permissions\. For information, see the [AWS Systems Manager Automation runbook reference](https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html)\.
+
+   If you need to create a role to use with your runbook, do the following
 
    1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-   1. Choose **Roles** from the left navigation and choose **Create role**\.
+   1. Choose **Roles** from the left navigation, then choose **Create role**\.
 
-   1. Choose **Incident Manager** and choose the **Incident Manager** use case\.
+   1. For **Select trusted entity**, do the following:
 
-   1. Choose **Next: Permissions**\.
+      1. For **Trusted entity type**, choose **AWS service**
 
-   1. Choose **Create policy** and then choose the **JSON** tab\. 
+      1. For **Use cases for other AWS services**, select **Incident Manager**
 
-   1. Copy and paste the following JSON blob describing the policy into the JSON editor\. Replace the account number \(*111122223333*\) and runbook name \(*DocumentName*\) in the runbook's ARN in the following policy example\.
+      1. Select **Incident Manager**, as shown in the following image\.  
+![\[Illustrating the Incident Manager option selected as a use case.\]](http://docs.aws.amazon.com/incident-manager/latest/userguide/images/iam_use_cases_for_response-plans.png)
+
+   1. Choose **Next**\.
+
+   1. Choose **Create policy**, and then choose the **JSON** tab\. 
+**Tip**  
+The **Create policy** page opens in a new tab\.
+
+   1. Replace the default contents of the JSON editor with the following policy\. Replace the placeholder account number \(*111122223333*\) and runbook name \(*DocumentName*\) in the runbook's ARN with your own values\.
 
       ```
       {
@@ -95,31 +110,47 @@ Incident Manager must have permissions to publish to the chat channel's SNS topi
        }
       ```
 
-   1. Choose **Next: Tags** and \(optional\) add tags to your policy\.
+   1. Choose **Next: Tags**\.
+
+   1. \(Optional\) For **Tags**, add one or more tag key\-value pairs to your policy\.
 
    1. Choose **Next: Review**\.
 
-   1. Provide a **Name** and \(optional\) provide a **Description** for the policy\.
+   1. \(Optional\) For **Name** and **Description** enter a human readable name and description for the policy\.
 
    1. Choose **Create policy**\.
 
-   1. Navigate back to the role you were creating and search for the policy you created\. Select the policy\.
+   1. Return to the browser tab for creating a role and search for the policy you created\. You might need to choose the refresh button first\.
 
-   1. \(Optional\) Add tags to your role\.
+   1. Select the policy you created, and then choose **Next**\.
 
-   1. Provide a **Role name** and \(optional\) update the **Role description**\.
+   1. For **Role name** and **Description**, provide a human readable name and \(optional\) description for the role\.
+
+   1. \(Optional\) Under **Tags**, and one or more tag key\-value pairs to your role\.
 
    1. Choose **Create role**\.
 
-1. Navigate back to the response plan you are creating and refresh the **Role name** dropdown\.
+1. Return to the response plan you created and refresh the **Role name** dropdown\.
 
 1. Select the role you created\.
 
-1. Choose the **Execution target**\.
+1. Expand **Additional options** and choose one of the following:
+   + **Response plan owner's account** – Start the runbook operation in the AWS account that created it\.
+   + **Impacted account** – Start the runbook operation in the account that began or reported an incident\. 
+
+**\(Optional\) Integrate a PagerDuty service into the response plan**<a name="anchor-pagerduty"></a>
+
+1. Expand **Third\-party integrations**, then choose the **Enable PagerDuty integration** check box\.
+
+1. For **Select secret**, select the secret in AWS Secrets Manager where you store the credentials to access your PagerDuty account\.
+
+   For information about storing your PagerDuty credentials in a Secrets Manager secret, see [Store PagerDuty access credentials in an AWS Secrets Manager secret](integrations-pagerduty-secret.md)\.
+
+1. For **PagerDuty service**, select the service from your PagerDuty account where you want to create the PagerDuty incident\.
 
 **Add tags and create the response plan**
 
-1. \(Optional\) Add tags to your response plan\.
+1. \(Optional\) Expand the **Tags** section and add one or more tag key\-value pairs to your response plan\.
 
 1. Choose **Create response plan**\.
 

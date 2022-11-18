@@ -38,20 +38,20 @@ Incident Manager does not allow you to edit the AWSServiceRoleforIncidentManager
 
 If you no longer need to use a feature or service that requires a service\-linked role, we recommend that you delete that role\. That way you don’t have an unused entity that isn't actively monitored or maintained\. However, you must clean up the resources for your service\-linked role before you can manually delete it\.
 
-To delete the service\-linked role you must first delete the replication set\. Deleting the replication set deletes all data created and stored in Incident Manager, including response plans, contacts, and escalation plans\. You will also lose all previously created incidents\. Any alarms and EventBridge rules pointing to deleted response plans will no longer create an incident on alarm or rule match\. To delete the replication set you must delete every region in the set\.
+To delete the service\-linked role you must first delete the replication set\. Deleting the replication set deletes all data created and stored in Incident Manager, including response plans, contacts, and escalation plans\. You will also lose all previously created incidents\. Any alarms and EventBridge rules pointing to deleted response plans will no longer create an incident on alarm or rule match\. To delete the replication set you must delete every Region in the set\.
 
 **Note**  
 If the Incident Manager service is using the role when you try to delete the resources, then the deletion might fail\. If that happens, wait for a few minutes and try the operation again\.
 
-**To delete the regions in the replication set used by the AWSServiceRoleforIncidentManager**
+**To delete the Regions in the replication set used by the AWSServiceRoleforIncidentManager**
 
 1. Open the [Incident Manager console](https://console.aws.amazon.com/systems-manager/incidents/home) and choose **Settings** from the left navigation\.
 
-1. Select a region in the **Replication set**\. 
+1. Select a Region in the **Replication set**\. 
 
 1. Choose **Delete**\.
 
-1. To confirm deletion of the region, enter the Region name and choose **Delete**\.
+1. To confirm deletion of the Region, enter the Region name and choose **Delete**\.
 
 1. Repeat these steps until you have deleted all Regions in your replication set\. When deleting the final Region, the console informs you that it deletes the replication set with it\.
 

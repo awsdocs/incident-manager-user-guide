@@ -1,20 +1,35 @@
 # Incident details<a name="tracking-details"></a>
 
-The Incident Manager incident details page is an incident responder's point of reference for all things involved in an incident\. The incident details page automatically populates incidents as they're created\.
+The **Incident details** page provides detailed insights and tools you can use to manage an incident\. From this page, you can start runbooks to mitigate an incident, add incident notes, engage other resolvers, and view incident details such as timelines, metrics, properties, and related resources\. The **Incident details** page includes the following sections: Top banner, **Incident notes**, and seven Tabs that contain additional information and resources\. By default, the Top banner and **Incident notes** sections are displayed on all **Incident details** page\.
 
-The top banner on every incident details page includes the **Incident title**, **Impact**, **Chat channel**, and **Duration**\. You can edit the incident title, impact, and chat channel by choosing **Edit** in the top\-right corner of the banner\. 
+![\[Image of the Incident details page.\]](http://docs.aws.amazon.com/incident-manager/latest/userguide/images/incident-details.png)
+
+This topic explains elements of the **Incident details** page and actions that you can perform from the page\. 
+
+## Top banner<a name="tracking-details-topbanner"></a>
+
+The top banner on every incident details page includes the following information: 
++ **Status** – The current status of an incident can be **Open** or **Resolved**\. 
++ **Impact** – The impact of the incident on your environment\. It can be high, medium, and low\. To change the impact of an incident, choose **Edit properties**\. 
++ **Chat channel** – A link to access the chat channel where you can view incident updates and notifications\.
++ **Duration** – The amount of time lapsed before a responder resolves the incident\. 
++ **Runbooks** – The statuses for the runbooks associated with this incident\. The status can be **waiting for input**, **successful**, or **unsuccessful**\. If a runbook’s status is **waiting for input**, you can select the runbook to view action details\. You can click **unsuccessful** to view runbooks that are **Timed out**, **Failed**, or **Canceled**\.
++ **Engagements** – The total number of engagements and the status of each engagement\. When you create an engagement, its status is **Engaged**\. Once you acknowledge the engagement, the status changes from **Engaged** to **Acknowledged**\. Incident Manager doesn’t support acknowledgement of third\-party engagements, such engagements remain in the **Engaged** status\. 
+
+ You can edit the incident title, impact, and chat channel by choosing **Edit** in the top\-right corner of the banner\. 
+
+## Incident notes<a name="tracking-details-incidentnotes"></a>
+
+The right side of the screen displays the **Incident notes** section\. With notes, you can collaborate and communicate with other users that work on an incident\. You can explain the mitigations that you applied, a potential root cause you identified, or the current status of the incident\. As a best practice, use the **Incident notes** section to post status updates and actions you or others take on an incident\. If you need to communicate with other resolvers in real time, use the chat channel available in Incident Manager\.
+
+To add a note, choose the **Add incident note** button, and then enter your note\. Notes can contain updates about incident status or any other relevant information that provides visibility to other users\. If required, you can also edit or delete incident notes\. 
+
+**Note**  
+Any user with IAM permission to run the `ssm-incidents:UpdateTimelineEvent` and `ssm-incidents:DeleteTimelineEvent` actions can edit and delete notes\. However, when you share an incident with another account, the resource policy doesn’t include the `ssm-incidents:DeleteTimelineEvent` action\. This prevents the user that you share the incident with from deleting the note\. You can view the audit trail for a note from Incident Manager events in the AWS CloudTrail console\. 
+
+## Tabs<a name="tracking-details-tabs"></a>
 
 The incident details page has seven tabs, making it easier for responders to locate and view information during an incident\. The tabs display a counter in the tab name, which indicates the number of updates to the tab\. For more information about the contents of each tab as well as available actions, continue reading\.
-
-**Topics**
-+ [Overview](#tracking-details-overview)
-+ [Metrics](#tracking-details-metrics)
-+ [Timeline](#tracking-details-timeline)
-+ [Runbooks](#tracking-details-runbook)
-+ [Tags](#tracking-details-tags)
-+ [Engagements](#tracking-details-engagements)
-+ [Related items](#tracking-details-related)
-+ [Properties](#tracking-details-properties)
 
 ## Overview<a name="tracking-details-overview"></a>
 
@@ -78,10 +93,6 @@ The **Runbook steps** section displays the list of steps that the selected runbo
 
 To cancel a runbook execution, choose **Cancel runbook**\. This will stop the execution of the runbook and not complete any further steps in the runbook\.
 
-## Tags<a name="tracking-details-tags"></a>
-
-The **Tags** section displays the tag keys and values associated with the incident record\. For more information about tags in Incident Manager, see [Tagging Incident Manager resources](tagging.md)\.
-
 ## Engagements<a name="tracking-details-engagements"></a>
 
 The **Engagements** tab of the incident details drives the engagement of responders and teams\. From this tab, you can see who has been engaged, who has responded, as well as which responders are going to be engaged as part of an escalation plan\. Responders can engage other contacts directly from this tab\. To learn more about creating contacts and escalation plans, see the [Contacts](contacts.md) and [Escalation plans](escalation.md) sections of this guide\. 
@@ -89,10 +100,11 @@ The **Engagements** tab of the incident details drives the engagement of respond
 You can configure response plans with contacts and escalation plans to automatically start engagement at the beginning of an incident\. To learn more about configuring response plans, see the [Response plans](response-plans.md) section of this guide\.
 
 You can find information about each contact in the table\. This table includes the following information:
-+ **Name** – Links to the contact's details page that displays the contact's contact methods and engagement plan\.
-+ **Escalation plan** – Links to the escalation plan used to engage the contact\.
-+ **Engaged** – Displays when the contact was engaged or when they will be engaged as part of an escalation plan\.
-+ **Acknowledged** – Displays whether the contact has acknowledged the engagement\.
++ **Name** – Links to the contact details page that displays their contact methods and engagement plan\.
++ **Escalation plan** – Links to the escalation plan that engaged the contact\.
++ **Contact source** – Identifies the service that engaged this contact, such as AWS Systems Manager or PagerDuty\.
++ **Engaged** – Displays when the plan engaged a contact, or when to engage a contact as part of an escalation plan\.
++ **Acknowledged** – Displays whether the contact acknowledged the engagement\.
 
 To acknowledge an engagement, the responder can do one of the following:
 + Phone call – Enter **1** when prompted\.
@@ -109,7 +121,9 @@ When removing a file related item, the file is removed from the incident but is 
 
 ## Properties<a name="tracking-details-properties"></a>
 
-The properties tab provides details about the incident\. You can view the following details:
+The **Properties** tab provides the following details about the incident\.
+
+In the **Incident properties** section, you can view the following:
 + **Status** – Describes the current status of the incident\. The incident can be **Open** or **Resolved**
 + **Start time** – The time when the incident was created in Incident Manager\.
 + **Resolved time** – The time that the incident was resolved in Incident Manager\.
@@ -118,3 +132,5 @@ The properties tab provides details about the incident\. You can view the follow
 + **Parent OpsItem** – Identifies the OpsItem created as the parent of the incident\. A parent OpsItem can have multiple related incidents and follow up action items\. Selecting the parent OpsItem opens the OpsItems details page in OpsCenter\.
 + **Analysis** – Identifies the analysis created from this incident\. Create an analysis from a resolved incident to improve your incident response process\. Choose the analysis to open the analysis details page\.
 + **Owner** – The account in which the incident was created\.
+
+In the **Tags** section, you can view and edit the tag keys and values associated with the incident record\. For more information about tags in Incident Manager, see [Tagging Incident Manager resources](tagging.md)\.

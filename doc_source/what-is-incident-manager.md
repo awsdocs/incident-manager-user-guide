@@ -54,11 +54,11 @@ You can access Incident Manager in any of the following ways:
 + **Incident Manager API** – For more information, see the [AWS Systems Manager Incident Manager API Reference](https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html)
 + **AWS SDKs** – For more information, see [Tools for Amazon Web Services](http://aws.amazon.com/tools)
 
-## Incident Manager regions and quotas<a name="regions-quotas"></a>
+## Incident Manager Regions and quotas<a name="regions-quotas"></a>
 
-Incident Manager isn't supported in all Systems Manager regions\. 
+Incident Manager isn't supported in all AWS Regions supported by Systems Manager\. 
 
-To view information about Incident Manager regions and quotas, see [Incident Manager endpoints](https://docs.aws.amazon.com/general/latest/gr/incident-manager.html) and quotas in the Amazon Web Services General Reference guide\.
+To view information about Incident Manager Regions and quotas, see [Incident Manager endpoints](https://docs.aws.amazon.com/general/latest/gr/incident-manager.html) and quotas in the Amazon Web Services General Reference guide\.
 
 ## Pricing for Incident Manager<a name="pricing"></a>
 

@@ -14,7 +14,7 @@ For this tutorial, we use a predefined pattern to create the EventBridge rule\. 
 
 **Create an EventBridge rule**
 
-1. Open the EventBridge console at [ https://console\.aws\.amazon\.com/events/](https://console.aws.amazon.com/events/)\.
+1. Open the Amazon EventBridge console at [https://console\.aws\.amazon\.com/events/](https://console.aws.amazon.com/events/)\.
 
 1. In the navigation pane, choose **Rules**\.
 

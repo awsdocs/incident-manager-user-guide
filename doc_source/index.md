@@ -4,13 +4,13 @@
 *****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
-Amazon's trademarks and trade dress may not be used in 
-     connection with any product or service that is not Amazon's, 
-     in any manner that is likely to cause confusion among customers, 
-     or in any manner that disparages or discredits Amazon. All other 
-     trademarks not owned by Amazon are the property of their respective
-     owners, who may or may not be affiliated with, connected to, or 
-     sponsored by Amazon.
+Amazon's trademarks and trade dress may not be used in
+connection with any product or service that is not Amazon's,
+in any manner that is likely to cause confusion among customers,
+or in any manner that disparages or discredits Amazon. All other
+trademarks not owned by Amazon are the property of their respective
+owners, who may or may not be affiliated with, connected to, or
+sponsored by Amazon.
 
 -----
 ## Contents
@@ -54,5 +54,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Configuration and vulnerability analysis in Incident Manager](vulnerability.md)
    + [Security best practices in AWS Systems Manager Incident Manager](security-best-practices.md)
 + [Product and service integrations with Incident Manager](integration.md)
+   + [Store PagerDuty access credentials in an AWS Secrets Manager secret](integrations-pagerduty-secret.md)
++ [Troubleshooting AWS Systems Manager Incident Manager](troubleshooting.md)
 + [AWS glossary](glossary.md)
 + [Document History for Incident Manager](doc-history.md)

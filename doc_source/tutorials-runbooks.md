@@ -17,7 +17,7 @@ This tutorial describes how to edit a CloudWatch alarm assigned to an Amazon EC2
 + [Response plans](response-plans.md)
 
 **Important**  
-You will incur costs by creating AWS resources and using runbook automation steps\. For more information, see [AWS pricing](https://aws.amazon.com/pricing)\.
+You will incur costs by creating AWS resources and using runbook automation steps\. For more information, see [AWS pricing](http://aws.amazon.com/pricing)\.
 
 **Topics**
 + [Task 1: Creating the runbook](#tutorials-runbook-create)

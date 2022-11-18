@@ -20,19 +20,27 @@ The first time you use Incident Manager, you can access the **Get prepared** wiz
 
 **General settings**
 
-1. Choose **General settings**\.
+1. Under **General settings**, choose **Set up**\.
 
-1. Read the on\-boarding acknowledgment\. If you agree to Incident Manager's terms and conditions, choose **I have read and agree to the AWS Systems Manager Incident Manager terms and conditions**, and then choose **Next**\.
+1. Read the terms and conditions\. If you agree to Incident Manager's terms and conditions, select **I have read and agree to the Incident Manager terms and conditions**, then choose **Next**\.
 
-1. Set up the replication set using either an AWS owned key or your own AWS KMS key\. All Incident Manager resources are encrypted\. To learn more about how your data is encrypted, see [Data Protection in Incident Manager](data-protection.md)\. For more information about your Incident Manager replication set, see [Using the Incident Manager replication set](disaster-recovery-resiliency.md#replication)\.
-   + If you want to use the AWS owned key, choose **Use AWS owned key**, and then choose **Create**\.
-   + If you want to use your own AWS KMS key, choose **Choose a different AWS KMS key \(advanced\)**\.
+1. In the **Regions** area, your current AWS Region appears as the first Region in your replication set\. To add more Regions to your replication set, choose them from the list of Regions\. 
 
-     1. Your current Region appears as the first Region in your replication set\. Search for an AWS key in our account\. If you have not created a key, or you need to create a new key, choose **Create an AWS KMS key**\.
+1. To set up encryption for your replication set, do one of the following:
+**Note**  
+All Incident Manager resources are encrypted\. To learn more about how your data is encrypted, see [Data Protection in Incident Manager](data-protection.md)\. For more information about your Incident Manager replication set, see [Using the Incident Manager replication set](disaster-recovery-resiliency.md#replication)\.
+   + To use an AWS owned key, choose **Use AWS owned key**\.
+   + To use your own AWS KMS key, choose **Choose an existing AWS KMS key**\. For each Region you selected in step 3, choose an AWS KMS key, or enter an AWS KMS Amazon Resource Name \(ARN\)\.
+**Tip**  
+If you don't have an available AWS KMS key, choose **Create an AWS KMS key**\.
 
-     1. To add more Regions to your replication set, choose **Add Region**\. 
+1. \(Optional\) In the **Tags** area, add one or more tags to the replication set\. A tag includes a key and, optionally, a value\.
 
-1. To create your replication set and begin creating contacts, choose **Create**\. To learn more about replication sets and resiliency, see [Resilience in AWS Systems Manager Incident Manager](disaster-recovery-resiliency.md)\.
+   Tags are optional metadata that you assign to a resource\. Tags allow you to categorize a resource in different ways, such as by purpose, owner, or environment\. For more information, see [Tagging Incident Manager resources](tagging.md)\.
+
+1. Choose **Create**\.
+
+   To learn more about replication sets and resiliency, see [Resilience in AWS Systems Manager Incident Manager](disaster-recovery-resiliency.md)\.
 
 **Note**  
 Creating the replication set creates the `AWSServiceRoleforIncidentManager` service\-linked role in your account\. To learn more about this role, see [Using service\-linked roles for Incident Manager](using-service-linked-roles.md) 
@@ -93,7 +101,13 @@ Creating the replication set creates the `AWSServiceRoleforIncidentManager` serv
 
 **Response plan**
 
-1. Choose **Create response plan**\. Use the response plan to put together contacts and escalation plans you created\. During this **Getting started** wizard, skip the **Chat channel** and **Runbooks** sections of the response plan\. To learn more about creating response plans with contacts, escalation plans, chat channels, and runbooks, see [Incident preparation](incident-response.md)\.
+1. Choose **Create response plan**\. Use the response plan to put together contacts and escalation plans you created\. During this **Getting started** wizard, the following sections are optional, especially if this is your first time setting up a response plan:
+   + **Chat channel**
+   + **Runbooks** 
+   + **Engagements**
+   +  **Third\-party integrations**
+
+   For information about adding these elements to response plans later, see [Incident preparation](incident-response.md)\.
 
 1. Enter a unique, identifiable **Name**\.
 
