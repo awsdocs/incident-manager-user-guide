@@ -10,7 +10,7 @@ AWS Systems Manager Incident Manager is an incident lifecycle management tool\. 
 
 ## Alerting and engagement<a name="alerting-engagement"></a>
 
-The alerting and engagement phase of the incident lifecycle focuses on bringing awareness to incidents within your applications\. This phase begins before an incident is ever detected and requires a deep understanding of your applications\. You can use Amazon CloudWatch metrics to monitor data about the performance of your applications\. For more information, see [Using Metrics]() in the CloudWatch user guide\. After you've set up monitoring for your applications, you can begin alerting on metrics that stray outside the historical norm by using CloudWatch alarms\. To learn more about monitoring best practices, see [Monitoring](incident-response.md#incident-response-monitoring) in the incident preparedness section of this user guide\.
+The alerting and engagement phase of the incident lifecycle focuses on bringing awareness to incidents within your applications\. This phase begins before an incident is ever detected and requires a deep understanding of your applications\. You can use Amazon CloudWatch metrics to monitor data about the performance of your applications\. For more information, see [Using CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/working_with_metrics.html) in the *Amazon CloudWatch User Guide*\. After you've set up monitoring for your applications, you can begin alerting on metrics that stray outside the historical norm by using CloudWatch alarms\. To learn more about monitoring best practices, see [Monitoring](incident-response.md#incident-response-monitoring)\.
 
 Now that you are monitoring for incidents in your applications, you can define an incident *response plan* to use during an incident\. To learn more about creating response plans, see [Response plans](response-plans.md)\. Amazon EventBridge events or CloudWatch Alarms can automatically create an incident using with response plans as the template\. To learn more about incident creation, see [Incident creation](incident-creation.md)\.
 
@@ -36,13 +36,13 @@ Incident Manager integrates with Systems Manager Automation to build runbooks\. 
 + Automatically run scripts
 + Manage AWS CloudFormation resources
 
-For more information about the supported action types, see [Systems Manager Automation actions reference](https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-actions.html)\.
+For more information about the supported action types, see [Systems Manager Automation actions reference](https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-actions.html) in the *AWS Systems Manager User Guide*\.
 
-The *timeline tab* shows what actions have been taken\. The timeline records each with a timestamp and automatically created details\. To add custom events to the timeline, see the [Timeline](tracking-details.md#tracking-details-timeline) section in the *Incident details* page of this user guide\.
+The **Timeline** tab shows what actions have been taken\. The timeline records each with a timestamp and automatically created details\. To add custom events to the timeline, see the [Timeline](tracking-details.md#tracking-details-timeline) section in the *Incident details* page of this user guide\.
 
-The *metrics tab* shows automatically populated metrics and manually added metrics\. This view provides valuable information into the activities of your application during an incident\.
+The **Metrics** tab shows automatically populated metrics and manually added metrics\. This view provides valuable information into the activities of your application during an incident\.
 
-Using *chat channels*, through AWS Chatbot, you can directly interact with your incident\. Using AWS Chatbot you can use any Incident Manager API action in the configured chat channel\. Update the title and description while you resolve the incident directly from the chat channel\. For more information about the commands available, see the [AWS Systems Manager Incident Manager API Reference](https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html)\.
+Using *chat channels*, through AWS Chatbot, you can directly interact with your incident\. Using AWS Chatbot you can use any Incident Manager API action in the configured chat channel\. Update the title and description while you resolve the incident directly from the chat channel\. For more information about the commands available, see the *[AWS Systems Manager Incident Manager API Reference](https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html)*\.
 
 ## Post\-incident analysis<a name="lifecycle-post-incident-analysis"></a>
 

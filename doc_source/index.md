@@ -30,6 +30,7 @@ sponsored by Amazon.
    + [Incident list](tracking-list.md)
    + [Incident details](tracking-details.md)
 + [Post-incident analysis](analysis.md)
++ [Incident Manager CloudWatch metrics](incident-manager-metrics.md)
 + [Incident Manager tutorials](tutorials.md)
    + [Using Systems Manager Automation runbooks with Incident Manager](tutorials-runbooks.md)
    + [Configuring on-call rotations](tutorials-oncall.md)

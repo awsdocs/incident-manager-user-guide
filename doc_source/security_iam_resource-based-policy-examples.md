@@ -21,7 +21,7 @@ The `Condition` block uses the `StringEquals` conditions and the `aws:PrincipalO
       "Effect": "Allow", 
       "Principal": “*”,
       "Condition": {
-         "StringEquals": {"aws:PrincipalOrgID" : ["o-abc123def45"] }
+         "StringEquals": {"aws:PrincipalOrgID":"o-abc123def45"}
       },
       "Action": [
         "ssm-incidents:GetResponsePlan",

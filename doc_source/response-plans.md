@@ -138,7 +138,9 @@ The **Create policy** page opens in a new tab\.
    + **Response plan owner's account** – Start the runbook operation in the AWS account that created it\.
    + **Impacted account** – Start the runbook operation in the account that began or reported an incident\. 
 
-**\(Optional\) Integrate a PagerDuty service into the response plan**<a name="anchor-pagerduty"></a>
+**\(Optional\) Integrate a PagerDuty service into the response plan**
+
+When you integrate Incident Manager with PagerDuty, PagerDuty creates a corresponding incident whenever Incident Manager creates an incident\. The incident in PagerDuty uses the paging workflow and escalation policies you've defined there in addition to those in Incident Manager\. PagerDuty attaches timeline events from Incident Manager as notes on your incident\.
 
 1. Expand **Third\-party integrations**, then choose the **Enable PagerDuty integration** check box\.
 

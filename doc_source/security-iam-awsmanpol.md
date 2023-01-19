@@ -24,7 +24,7 @@ You can't attach `AWSIncidentManagerServiceRolePolicy` to your IAM entities\. Th
 
 
 
-This policy grants Incident Manager permissions to list incidents, create timeline events, create OpsItems, associate related items to OpsItems, and start engagements related to an incident\.
+This policy grants Incident Manager permissions to list incidents, create timeline events, create OpsItems, associate related items to OpsItems, start engagements, and publish CloudWatch metrics related to an incident\.
 
 
 
@@ -38,6 +38,7 @@ This policy includes the following permissions\.
 + `ssm-incidents` – Allows principals to list incidents and create timeline events\. This is required so responders can collaborate during an incident on the incident dashboard\.
 + `ssm` – Allows the principals to create OpsItems and associate related items\. This is required to create a parent OpsItem when an incident starts\.
 + `ssm-contacts` – Allows principals to start engagements\. This is required for Incident Manager to engage contacts during an incident\.
++ `cloudwatch` – Allows principals to publish cloudwatch metrics\. This is required for Incident Manager to publish metrics related to an incident\.
 
 
 
@@ -68,6 +69,19 @@ This policy includes the following permissions\.
             "Effect": "Allow",
             "Action": "ssm-contacts:StartEngagement",
             "Resource": "*"
+        },
+        {
+            "Sid": "PutCloudWatchMetricPermission",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:PutMetricData"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "cloudwatch:namespace": "AWS/IncidentManager"
+                }
+            }
         }
     ]
 }
@@ -147,6 +161,7 @@ View details about updates to AWS managed policies for Incident Manager since th
 
 | Change | Description | Date | 
 | --- | --- | --- | 
+|  [`AWSIncidentManagerServiceRolePolicy`](#security-iam-awsmanpol-AWSServiceRoleforIncidentManagerPolicy) – Policy change  |  Incident Manager added a new permission which allows Incident Manager to publish metrics into your account\.  | Dec 16, 2022 | 
 |  [`AWSIncidentManagerResolverAccess`](#security-iam-awsmanpol-AWSIncidentManagerResolverAccess) – New policy  |  Incident Manager added a new policy to allow you to start incidents, list response plans, list incidents, update incidents, list timeline events, create custom timeline events, update custom timeline events, delete custom timeline events, list related items, create related items, and update related items\.  | April 26, 2021 | 
 |  [`AWSIncidentManagerServiceRolePolicy`](#security-iam-awsmanpol-AWSServiceRoleforIncidentManagerPolicy) – New policy  |  Incident Manager added a new policy to grant Incident Manager permissions to list incidents, create timeline events, create OpsItems, associate related items to OpsItems, and start engagements related to an incident\.  | April 26, 2021 | 
 |  Incident Manager started tracking changes  |  Incident Manager started tracking changes for its AWS managed policies\.  | April 26, 2021 | 

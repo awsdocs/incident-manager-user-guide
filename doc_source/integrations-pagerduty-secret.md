@@ -1,6 +1,10 @@
 # Store PagerDuty access credentials in an AWS Secrets Manager secret<a name="integrations-pagerduty-secret"></a>
 
-After you turn on integration with PagerDuty, Incident Manager can create a corresponding incident in PagerDuty when your create a new incident in Incident Manager\. The paging structure and escalation policies you created in PagerDuty are used in the PagerDuty environment\. However, Incident Manager doesn't import your PagerDuty configuration\. You also have the option of automatically resolving the PagerDuty incident when you resolve the related incident in Incident Manager\. 
+After you turn on integration with PagerDuty for a response plan, Incident Manager works with PagerDuty in the following ways:
++ Incident Manager creates a corresponding incident in PagerDuty when your create a new incident in Incident Manager\.
++ The paging workflow and escalation policies you created in PagerDuty are used in the PagerDuty environment\. However, Incident Manager doesn't import your PagerDuty configuration\.
++ Incident Manager publishes timeline events as notes to the incident in PagerDuty, up to a maximum of 2,000 notes\.
++ You can choose to automatically resolve PagerDuty incidents when you resolve the related incident in Incident Manager\. 
 
 To integrate Incident Manager with PagerDuty, you must first create a secret in AWS Secrets Manager that contains your PagerDuty credentials\. These allow Incident Manager to communicate with your PagerDuty service\. You can then include a PagerDuty service in response plans that you create in Incident Manager\.
 
@@ -21,7 +25,7 @@ The customer managed key must meet the following requirements:
 + **Key type**: Choose **Symmetric**\.
 +  **Key usage**: Choose **Encrypt and decrypt**\.
 + **Regionality**: If you want to replicate your response plan to multiple AWS Regions, ensure that you select **Multi\-Region key**\.
-+ **Key policy**: The IAM user that is configuring the response plan must have permission for `kms:GenerateDataKey` and `kms:Decrypt` in the key's resource\-based policy\. The `ssm-incidents.amazonaws.com` service principal must have permission for `kms:GenerateDataKey` and `kms:Decrypt` in the key's resource based policy\.
++ **Key policy**: The user that is configuring the response plan must have permission for `kms:GenerateDataKey` and `kms:Decrypt` in the key's resource\-based policy\. The `ssm-incidents.amazonaws.com` service principal must have permission for `kms:GenerateDataKey` and `kms:Decrypt` in the key's resource based policy\.
 
   The following policy demonstrates these permissions, which you add to the `Statement` section:
 

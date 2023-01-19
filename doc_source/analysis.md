@@ -68,19 +68,22 @@ An analysis template provides a set of questions that dive deep into the root ca
 
 ### AWS standard template<a name="analysis-templates-standard"></a>
 
-Incident Manager provides a standard template of questions based on AWS incident response and problem analysis best practices\. The standard AWS template provided by Incident Manager is `AWSIncidents-PostIncidentAnalysisTemplate`\. 
+Incident Manager provides a standard template of questions based on AWS incident response and problem analysis best practices, titled `AWSIncidents-PostIncidentAnalysisTemplate`\. 
 
 ### Create an analysis template<a name="analysis-templates-create"></a>
 
-We encourage you to use the default template and add additional questions or sections that are appropriate for your use cases\. Create analysis templates based on the default template in your management account and duplicate them to each Region where you have enabled Incident Manager\.
+We encourage you to use the default `AWSIncidents-PostIncidentAnalysisTemplate` template and add additional questions or sections that are appropriate for your use cases\. Create analysis templates based on the default template Use this template as a starting point to create analysis templates in your management account\. You can then duplicate your analysis templates to each Region where you enabled Incident Manager\.
 
 **Create an analysis template**
 
-1. Download `AWSIncidents-PostIncidentAnalysisTemplate` by calling the `GetDocument` action using the parameter "Name" ` AWSIncidents-PostIncidentAnalysisTemplate`\. For more information about the `GetDocument` syntax, see [Systems Manager API Reference](https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDocument.html)\.
+1. Call the `GetDocument` action and use its `Name` parameter to download `AWSIncidents-PostIncidentAnalysisTemplate`\. For more information about the `GetDocument` syntax, see [Systems Manager API Reference](https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDocument.html)\.
 
 1. The content in the response contains the JSON building blocks for the analysis\. Use the question building blocks to insert additional questions in the analysis\. We recommend that you add questions or sections in the `Incident questions` section\.
 
-1. To create the new template, use the `CreateDocument` operation with the updated JSON from the previous step\. You must include `DocumentFormat: "JSON"`, `DocumentType: "ProblemAnalysisTemplate"`, and `Name: "Analysis_Template_Name`\.
+1. To create the new template, use the `CreateDocument` operation with the updated JSON from the previous step\. You must include the following, where `Analysis_Template_Name` is the name of your template, 
+   + `DocumentFormat: "JSON"`
+   + `DocumentType: "ProblemAnalysisTemplate"`
+   + `Name: "Analysis_Template_Name"`
 
 ## Create an analysis<a name="analysis-create"></a>
 
@@ -88,6 +91,29 @@ We encourage you to use the default template and add additional questions or sec
 
 1. To create an analysis, choose **Create analysis** from the incident details page of a closed incident\.
 
-1. Choose the analysis template and provide a descriptive name of the analysis\.
+1. Choose the analysis template to create this analysis from, and enter a descriptive name of the analysis\.
 
 1. Choose **Create**\.
+
+## Print a formatted incident analysis<a name="print-a-formatted-analysis"></a>
+
+You can generate a copy of a complete or incomplete analysis that is formatted for printing\. You can also save this copy as a PDF\. You can print one analysis at a time\. Batch printing of multiple analyses isn't currently supported\. 
+
+**To print a formatted analysis**
+
+1. Open the [Incident Manager console](https://console.aws.amazon.com/systems-manager/incidents/home)\.
+
+1. Choose the **Analysis** tab\.
+
+1. Choose the title of the analysis that you want to print\.
+
+1. In the upper right corner of the analysis detail page, choose **Print**\.
+
+1. In the **Print incident analysis** dialog box, clear the sections of the analysis you don't want included in the printed version\. By default, all sections are selected\.
+
+1. Choose **Print** to open the local print controls for your device\.
+
+1. Choose your printing destination or format\. You can choose a local or network printer, or you can save the analysis to a PDF\. Make any changes, if wanted, to the remaining printing options, and then choose **Print**\.
+**Note**  
+*Local print controls* refers to the user interface provided by your web browser and device\.  
+*Printing destinations* are those configured for, and accessible from, your device\.

@@ -15,12 +15,13 @@ Incident Manager uses the service\-linked role named **AWSServiceRoleforIncident
 The AWSServiceRoleforIncidentManager service\-linked role trusts the following services to assume the role:
 + `ssm-incidents.amazonaws.com`
 
-The role permissions policy allows Incident Manager to complete the following actions on the specified resources:
+The role permissions policy [`AWSIncidentManagerServiceRolePolicy`](security-iam-awsmanpol.md#security-iam-awsmanpol-AWSServiceRoleforIncidentManagerPolicy) allows Incident Manager to complete the following actions on the specified resources:
 + Action: `ssm-incidents:ListIncidentRecords` on all resources related to the action\.
 + Action: `ssm-incidents:CreateTimelineEvent` on all resources related to the action\.
 + Action: `ssm:CreateOpsItem` on all resources related to the action\.
 + Action: `ssm:AssociateOpsItemRelatedItem` on `all resources related to the action.`
 + Action: `ssm-contacts:StartEngagement` on all resources related to the action\.
++ Action: `cloudwatch:PutMetricData` on CloudWatch metrics inside the `AWS/IncidentManager` namespace
 
 You must configure permissions to allow an IAM entity \(such as a user, group, or role\) to create, edit, or delete a service\-linked role\. For more information, see [Service\-Linked Role Permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#service-linked-role-permissions) in the *IAM User Guide*\.
 
