@@ -1,6 +1,6 @@
-# Incident Manager CloudWatch metrics<a name="incident-manager-metrics"></a>
+# Amazon CloudWatch metrics in Incident Manager<a name="incident-manager-metrics"></a>
 
-Incident Manager provides aggregate metrics that you can monitor in CloudWatch\. You can use these metrics to identify incident and response plan trends\.
+Incident Manager provides aggregate metrics that you can monitor in Amazon CloudWatch\. You can use these metrics to identify incident and response plan trends\.
 
 **These metrics include:**
 + Number of incidents created over a given period of time

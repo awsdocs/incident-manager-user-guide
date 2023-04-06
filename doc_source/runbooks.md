@@ -1,13 +1,13 @@
-# Runbooks and automation<a name="runbooks"></a>
+# Working with Systems Manager Automation runbooks in Incident Manager<a name="runbooks"></a>
 
-You can use [AWS Systems Manager Automation](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation.html) runbooks to automate common application and infrastructure tasks\. For example, you can use runbooks to automate the maintenance, deployment, and remediation of your AWS resources\. In Incident Manager, a runbook drives incident response and mitigation\.
+You can use runbooks in [AWS Systems Manager Automation](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation.html) to automate common application and infrastructure tasks\. For example, you can use runbooks to automate the maintenance, deployment, and remediation of your AWS resources\. In Incident Manager, a runbook drives incident response and mitigation\.
 
 You can choose from dozens of pre\-configured runbooks for commonly automated tasks, such as restarting Amazon Elastic Compute Cloud \(Amazon EC2\) instances, or you can create your own\. If you specify a runbook in a response plan definition, the system can automatically initiate the runbook when an incident starts\.
 
 This topic describes how to create and share a runbook, and how to locate and use the Incident Manager runbook template\. For more information about Systems Manager Automation, runbooks, and using runbooks with Incident Manager, see the following topics:
 + To learn more about runbooks, see [AWS Systems Manager Automation](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation.html) in the *AWS Systems Manager User Guide*
 + To learn about the cost of using runbooks, see [Systems Manager pricing](http://aws.amazon.com/systems-manager/pricing/)\.
-+ To learn how to add a runbook to a response plan, see [Response plans](response-plans.md)\.
++ To learn how to add a runbook to a response plan, see [Working with response plans in Incident Manager](response-plans.md)\.
 + To learn more about automatically invoking runbooks when an incident is created by a Amazon CloudWatch alarm or an Amazon EventBridge event, see [Tutorial: Using Systems Manager Automation runbooks with Incident Manager](https://docs.aws.amazon.com/incident-manager/latest/userguide/tutorials-runbooks.html)\.
 
 **Important**  
@@ -26,7 +26,7 @@ When Incident Manager creates an incident, the system captures the ARNs of the r
 
 
 
-### About involved resources<a name="runbooks-parameters-involved-resources"></a>
+### About associated resources<a name="runbooks-parameters-involved-resources"></a>
 
 Incident Manager can populate runbook parameter values with the ARNs of AWS resources specified in CloudWatch alarms, EventBridge events, and manually\-created incidents\. This section describes the different types of resources for which Incident Manager can capture ARNs when populating this parameter\.
 
@@ -38,10 +38,10 @@ When an incident is created from a CloudWatch alarm action, Incident Manager aut
 
 | AWS service | Resource type | 
 | --- | --- | 
-|  Amazon DynamoDB  |  Tables Global secondary indexes Streams  | 
-|  Amazon EC2  |  Instances  | 
-|  AWS Lambda  |  Function versions Function aliases Functions  | 
-|  Amazon Relational Database Service \(Amazon RDS\)  |  Database instances  | 
+|  Amazon DynamoDB  |  Global secondary indexes Streams Tables  | 
+|  Amazon EC2  |  Images Instances  | 
+|  AWS Lambda  |  Function aliases Function versions Functions  | 
+|  Amazon Relational Database Service \(Amazon RDS\)  |  Clusters Database instances  | 
 |  Amazon Simple Storage Service \(Amazon S3\)  |  Buckets  | 
 
 **EventBridge rules**  

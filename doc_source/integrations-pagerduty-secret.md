@@ -1,4 +1,4 @@
-# Store PagerDuty access credentials in an AWS Secrets Manager secret<a name="integrations-pagerduty-secret"></a>
+# Storing PagerDuty access credentials in an AWS Secrets Manager secret<a name="integrations-pagerduty-secret"></a>
 
 After you turn on integration with PagerDuty for a response plan, Incident Manager works with PagerDuty in the following ways:
 + Incident Manager creates a corresponding incident in PagerDuty when your create a new incident in Incident Manager\.
@@ -155,4 +155,6 @@ For information about how to add a PagerDuty service to a Incident Manager incid
 
 **Related information**
 
-[Secret encryption in AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html) in the *AWS Secrets Manager User Guide*\.
+[How to Automate Incident Response with PagerDuty and AWS Systems Manager Incident Manager](http://aws.amazon.com/blogs/mt/how-to-automate-incident-response-with-pagerduty-and-aws-systems-manager-incident-manager/) \(AWS Cloud Operations and Migrations Blog\)
+
+[Secret encryption in AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html) in the *AWS Secrets Manager User Guide*

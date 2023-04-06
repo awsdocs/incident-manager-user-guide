@@ -1,6 +1,6 @@
-# Managing security incidents<a name="tutorials-security"></a>
+# Managing security incidents in Incident Manager<a name="tutorials-security"></a>
 
-You can use AWS Security Hub, Amazon EventBridge, and Incident Manager together to identify and manage security incidents in your AWS\-hosted\-applications\. This tutorial walks you through configuring an EventBridge rule that creates an incident based on Security Hub automatically sent findings\.
+You can use AWS Security Hub, Amazon EventBridge, and Incident Manager together to identify and manage security incidents in your AWS hosted\-applications\. This tutorial walks you through configuring an EventBridge rule that creates an incident based on Security Hub automatically sent findings\.
 
 **Note**  
 This tutorial uses EventBridge Security Hub\. You may incur costs from using these services\.
@@ -8,7 +8,7 @@ This tutorial uses EventBridge Security Hub\. You may incur costs from using the
 **Prerequisites**
 + Set up Security Hub\. For more information, see [Setting up AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html)\.
 + Create or update findings in Security Hub\. For more information, see [Findings in AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings.html)\.
-+ Configure a response plan that Incident Manager will use as the template when creating your security incident\. For more information, see [Incident preparation](incident-response.md)\.
++ Configure a response plan that Incident Manager will use as the template when creating your security incident\. For more information, see [Preparing for incidents in Incident Manager](incident-response.md)\.
 
 For this tutorial, we use a predefined pattern to create the EventBridge rule\. To create the rule using a custom pattern, see [Using a custom pattern to create the rule](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cwe-all-findings.html#securityhub-cwe-all-findings-custom-pattern) in the AWS Security Hub user guide\.
 

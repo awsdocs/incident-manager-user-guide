@@ -9,13 +9,13 @@ Security is a shared responsibility between AWS and you\. The [shared responsibi
 This documentation helps you understand how to apply the shared responsibility model when using Incident Manager\. The following topics show you how to configure Incident Manager to meet your security and compliance objectives\. You also learn how to use other AWS services that help you to monitor and secure your Incident Manager resources\. 
 
 **Topics**
-+ [Data Protection in Incident Manager](data-protection.md)
++ [Data protection in Incident Manager](data-protection.md)
 + [Identity and Access Management for AWS Systems Manager Incident Manager](security-iam.md)
-+ [Working with shared contacts and response plans](sharing.md)
-+ [Logging AWS Systems Manager Incident Manager API calls using AWS CloudTrail](logging-using-cloudtrail.md)
++ [Working with shared contacts and response plans in Incident Manager](sharing.md)
++ [Logging Incident Manager API calls using AWS CloudTrail](logging-using-cloudtrail.md)
 + [Compliance validation for AWS Systems Manager Incident Manager](SERVICENAME-compliance.md)
 + [Resilience in AWS Systems Manager Incident Manager](disaster-recovery-resiliency.md)
 + [Infrastructure security in AWS Systems Manager Incident Manager](infrastructure-security.md)
-+ [AWS Systems Manager Incident Manager and interface VPC endpoints \(AWS PrivateLink\)](vpc-interface-endpoints.md)
++ [Working with AWS Systems Manager Incident Manager and interface VPC endpoints \(AWS PrivateLink\)](vpc-interface-endpoints.md)
 + [Configuration and vulnerability analysis in Incident Manager](vulnerability.md)
 + [Security best practices in AWS Systems Manager Incident Manager](security-best-practices.md)

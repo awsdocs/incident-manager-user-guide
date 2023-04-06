@@ -1,8 +1,8 @@
 # What Is AWS Systems Manager Incident Manager?<a name="what-is-incident-manager"></a>
 
-AWS Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their AWS\-hosted applications\. An incident is any unplanned interruption or reduction in quality of services\. 
+AWS Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their AWS hosted applications\. An incident is any unplanned interruption or reduction in quality of services\. 
 
-Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running\. To achieve the primary goal of reducing the time\-to\-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation\.
+Incident Manager decreases incident resolution time by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running\. To achieve the primary goal of reducing the time\-to\-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation\.
 
 Using AWS tools such as Amazon CloudWatch Alarms and CloudWatch Metrics, AWS CloudTrail, AWS Systems Manager, AWS Chatbot, and more, Incident Manager facilitates rapid incident response to get applications working again\. 
 
@@ -27,7 +27,7 @@ Use the Incident Manager incident timeline to display points of interest in chro
 + Runbook steps completed
 
 **Collaborate effectively**  
-Incident Manager brings incident responders together through the use of contacts, escalation plans, and chat channels\. Define *contacts* directly in Incident Manager with their preferred contact channels\. Using your defined contacts, create *escalation plans* to engage the necessary responders at the right time during an incident\. 
+Incident Manager brings incident responders together through the use of contacts, on\-call schedules, escalation plans, and chat channels\. Define *contacts* directly in Incident Manager with their preferred contact channels\. Add contacts to on\-call schedule rotations to determine who is engaged to deal with incidents during a given period\. Using your defined contacts and on\-call schedules, create *escalation plans* to engage the necessary responders at the right time during an incident\. 
 
 Bring together responders in connected chat channels where they can directly interact with the incident using AWS Chatbot clients\. Incident Manager displays the real\-time actions of incident responders in the chat channel, providing context to others\. Communication during an incident is the key to faster resolution\.
 
@@ -39,12 +39,12 @@ Using Incident Manager *post incident analysis*, your team can develop more robu
 ## Related services<a name="related-services"></a>
 
 Incident Manager integrates with your current AWS environment to provide rapid resolution of incidents\. 
-+ **AWS Chatbot** – DevOps teams can use Amazon Chime and Slack chat rooms to monitor and respond to incidents\. To learn how Incident Manager works with AWS Chatbot, see [Chat channels](chat.md) in the *Communications* section of this guide\.
++ **AWS Chatbot** – DevOps teams can use Amazon Chime and Slack chat rooms to monitor and respond to incidents\. To learn how Incident Manager works with AWS Chatbot, see [Working with chat channels in Incident Manager](chat.md) in the *Communications* section of this guide\.
 + **AWS CloudFormation** – Automate the creation of response plans using AWS CloudFormation\. For more information, see the *[AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html)*\.
-+ **Amazon CloudWatch** – Configure CloudWatch to monitor your application resources\. Use CloudWatch alarms to initiate incidents in the Incident Manager console\. To learn about monitoring best practices, see [Response plans](response-plans.md)\. Review detailed metrics during an incident using the incident details page\. For more information about metrics in the incident details page, see [Metrics](tracking-details.md#tracking-details-metrics) in the incident details section of this guide\. 
++ **Amazon CloudWatch** – Configure CloudWatch to monitor your application resources\. Use CloudWatch alarms to initiate incidents in the Incident Manager console\. To learn about monitoring best practices, see [Working with response plans in Incident Manager](response-plans.md)\. Review detailed metrics during an incident using the incident details page\. For more information about metrics in the incident details page, see [Metrics](tracking-details.md#tracking-details-metrics) in the incident details section of this guide\. 
 + **AWS Systems Manager** – Use Systems Manager capabilities to view and control your application infrastructure\. For more information, see the *[AWS Systems Manager User Guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html)*\.
-  + OpsCenter – Create *OpsItems* directly from a post incident analysis to follow up on related work\. To learn more about continuous improvement using Incident Manager post incident analysis, see the [Post\-incident analysis](analysis.md) section of this guide\.
-  + Automation – To learn about creating runbooks using Systems Manager automation, see [Runbooks and automation](runbooks.md)\.
+  + OpsCenter – Create *OpsItems* directly from a post incident analysis to follow up on related work\. To learn more about continuous improvement using Incident Manager post incident analysis, see the [Performing a post\-incident analysis in Incident Manager](analysis.md) section of this guide\.
+  + Automation – To learn about creating runbooks using Systems Manager automation, see [Working with Systems Manager Automation runbooks in Incident Manager](runbooks.md)\.
 
 ## Accessing Incident Manager<a name="access"></a>
 
@@ -64,4 +64,4 @@ To view information about Incident Manager Regions and quotas, see [AWS Systems 
 
 There is a charge to use Incident Manager\. For more information, see [AWS Systems Manager pricing](http://aws.amazon.com/systems-manager/pricing/)\.
 
-Other AWS services, AWS content and third\-party content made available in connection with this Service may be subject to separate charges and governed by additional terms\.
+Other AWS services, AWS content and third\-party content made available in connection with this service may be subject to separate charges and governed by additional terms\.

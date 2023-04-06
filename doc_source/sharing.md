@@ -1,4 +1,4 @@
-# Working with shared contacts and response plans<a name="sharing"></a>
+# Working with shared contacts and response plans in Incident Manager<a name="sharing"></a>
 
 With contact sharing, as a contact owner, you can share contact information, escalation plans, and engagements with other AWS accounts or within an AWS organization\. You can create and manage contacts and escalation plans centrally, and ensure that others can engage the correct contacts during an incident\. 
 

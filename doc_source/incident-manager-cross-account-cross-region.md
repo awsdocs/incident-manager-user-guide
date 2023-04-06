@@ -1,4 +1,4 @@
-# Cross\-Region and cross\-account incident management<a name="incident-manager-cross-account-cross-region"></a>
+# Cross\-Region and cross\-account incident management in Incident Manager<a name="incident-manager-cross-account-cross-region"></a>
 
 You can configure Incident Manager, a capability of AWS Systems Manager, to work with multiple AWS Regions and accounts\. This section describes cross\-Region and cross\-account best practices, set up steps, and known limitations\. 
 
@@ -15,7 +15,7 @@ Note the following important details\.
 We recommend that you specify at least two AWS Regions in your replication set\. If you don't specify at least two Regions, the system will fail to create incidents during the period when Incident Manager is unavailable\.
 Incidents created by a cross\-Region failover don't invoke runbooks specified in response plans\.
 
-For more information about on\-boarding with Incident Manager and specifying additional Regions, see [Getting prepared with Incident Manager](getting-started.md)\.
+For more information about on\-boarding with Incident Manager and specifying additional Regions, see [Getting started with Incident Manager](getting-started.md)\.
 
 ## Cross\-account incident management<a name="incident-manager-cross-account"></a>
 
@@ -46,7 +46,7 @@ The following steps describe how to set up and configure Incident Manager resour
    + *Running a runbook in the management account\.* The management account must download and install the [https://s3.amazonaws.com/aws-incident-manager-assets.us-east-1/cross-account-setup/AWS-SystemsManager-AutomationReadOnlyRole.zip](https://s3.amazonaws.com/aws-incident-manager-assets.us-east-1/cross-account-setup/AWS-SystemsManager-AutomationReadOnlyRole.zip) CloudFormation template\. When installing `AWS-SystemsManager-AutomationReadOnlyRole`, specify the account IDs of all application accounts\. This role will let your application accounts read the status of the runbook from the incident details page\. The application account must install the [https://s3.amazonaws.com/aws-incident-manager-assets.us-east-1/cross-account-setup/AWS-SystemManager-AutomationAdministrationReadOnlyRole.zip](https://s3.amazonaws.com/aws-incident-manager-assets.us-east-1/cross-account-setup/AWS-SystemManager-AutomationAdministrationReadOnlyRole.zip) CloudFormation template\. The incident details page uses this role to get the automation status from the management account\.
    + *Running a runbook in an application account\.* The management account must download and install the [https://s3.amazonaws.com/aws-incident-manager-assets.us-east-1/cross-account-setup/AWS-SystemManager-AutomationAdministrationReadOnlyRole.zip](https://s3.amazonaws.com/aws-incident-manager-assets.us-east-1/cross-account-setup/AWS-SystemManager-AutomationAdministrationReadOnlyRole.zip) CloudFormation template\. This role allows the management account to read the status of the runbook in the application account\. The application account must download and install the [https://s3.amazonaws.com/aws-incident-manager-assets.us-east-1/cross-account-setup/AWS-SystemsManager-AutomationReadOnlyRole.zip](https://s3.amazonaws.com/aws-incident-manager-assets.us-east-1/cross-account-setup/AWS-SystemsManager-AutomationReadOnlyRole.zip) CloudFormation template\. When installing `AWS-SystemsManager-AutomationReadOnlyRole`, specify the account ID of the management account and other application accounts\. The management and other application accounts assume this role to read the status of the runbook\.
 
-1. To set up and create contacts, escalation plans, chat channels, and response plans, follow the steps detailed in [Incident preparation](incident-response.md)\.
+1. To set up and create contacts, escalation plans, chat channels, and response plans, follow the steps detailed in [Preparing for incidents in Incident Manager](incident-response.md)\.
 
 1. Add your contacts and response plan resources to either your existing resource share or a new resource share in AWS RAM\. For more information, see [Getting started with AWS RAM](https://docs.aws.amazon.com/ram/latest/userguide/getting-started.html) in the *AWS RAM User Guide*\. Adding response plans to AWS RAM enables application accounts to access incidents and incident dashboards created using the response plans\. Application accounts also gain the ability to associate CloudWatch alarms and EventBridge events to a response plan\. Adding the contacts and escalation plans to AWS RAM enables application accounts to view engagements and engage contacts from the incident dashboard\. 
 

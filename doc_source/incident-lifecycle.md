@@ -1,6 +1,6 @@
-# Incident lifecycle<a name="incident-lifecycle"></a>
+# The incident lifecycle in Incident Manager<a name="incident-lifecycle"></a>
 
-AWS Systems Manager Incident Manager is an incident lifecycle management tool\. The primary goal of Incident Manager is to facilitate the return of your AWS\-hosted applications to normal as quickly as possible\. Incident Manager provides tools and best practices for every phase of the incident lifecycle:
+AWS Systems Manager Incident Manager is an incident lifecycle management tool\. The primary goal of Incident Manager is to facilitate the return of your AWS hosted applications to normal as quickly as possible\. Incident Manager provides tools and best practices for every phase of the incident lifecycle:
 + [Alerting and engagement](#alerting-engagement)
 + [Triage](#triage)
 + [Investigation and mitigation](#investigation-mitigation)
@@ -12,9 +12,9 @@ AWS Systems Manager Incident Manager is an incident lifecycle management tool\. 
 
 The alerting and engagement phase of the incident lifecycle focuses on bringing awareness to incidents within your applications\. This phase begins before an incident is ever detected and requires a deep understanding of your applications\. You can use Amazon CloudWatch metrics to monitor data about the performance of your applications\. For more information, see [Using CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/working_with_metrics.html) in the *Amazon CloudWatch User Guide*\. After you've set up monitoring for your applications, you can begin alerting on metrics that stray outside the historical norm by using CloudWatch alarms\. To learn more about monitoring best practices, see [Monitoring](incident-response.md#incident-response-monitoring)\.
 
-Now that you are monitoring for incidents in your applications, you can define an incident *response plan* to use during an incident\. To learn more about creating response plans, see [Response plans](response-plans.md)\. Amazon EventBridge events or CloudWatch Alarms can automatically create an incident using with response plans as the template\. To learn more about incident creation, see [Incident creation](incident-creation.md)\.
+Now that you are monitoring for incidents in your applications, you can define an incident *response plan* to use during an incident\. To learn more about creating response plans, see [Working with response plans in Incident Manager](response-plans.md)\. Amazon EventBridge events or CloudWatch Alarms can automatically create an incident using with response plans as the template\. To learn more about incident creation, see [Creating incidents in Incident Manager](incident-creation.md)\.
 
-Response plans launch related *escalation plans* and *engagement plans* to bring first responders into the incident\. For more information about setting up escalation plans, see [Create an escalation plan](escalation.md#escalation-create)\. Simultaneously, AWS Chatbot notifies responders using a *chat channel* directing them to the incident detail page\. Using the chat channel and *incident details*, the team can communicate and triage an incident\. For more information about setting up chat channels in Incident Manager, see [Set up an AWS Chatbot client](chat.md#chat-create)\.
+Response plans launch related *escalation plans* and *engagement plans* to bring first responders into the incident\. For more information about setting up escalation plans, see [Create an escalation plan](escalation.md#escalation-create)\. Simultaneously, AWS Chatbot notifies responders using a *chat channel* directing them to the incident detail page\. Using the chat channel and *incident details*, the team can communicate and triage an incident\. For more information about setting up chat channels in Incident Manager, see [Task 2: Create a chat channel in AWS Chatbot](chat.md#chat-create)\.
 
 ## Triage<a name="triage"></a>
 
@@ -52,4 +52,4 @@ Use *post incident analysis* to reflect on the incident\. Post incident analysis
 + Changes to runbooks\. Your team can dive deep into steps needed for resolution and the steps that you can automate\. 
 + Changes to alerting\. After an incident, your team might have noticed critical points in the metrics you can use to alert the team sooner about an incident\. 
 
-Incident Manager facilitates these potential improvements by using a set of post incident analysis questions and action items alongside the incident timeline\. To learn more about improvement through analysis, see [Post\-incident analysis](analysis.md)\.
+Incident Manager facilitates these potential improvements by using a set of post incident analysis questions and action items alongside the incident timeline\. To learn more about improvement through analysis, see [Performing a post\-incident analysis in Incident Manager](analysis.md)\.

@@ -1,4 +1,4 @@
-# Setting up for AWS Systems Manager Incident Manager<a name="setting-up"></a>
+# Setting up AWS Systems Manager Incident Manager<a name="setting-up"></a>
 
 We recommend setting up AWS Systems Manager Incident Manager in the account that you use to manage your operations\. Before you use Incident Manager for the first time, complete the following tasks:
 

@@ -1,4 +1,4 @@
-# Post\-incident analysis<a name="analysis"></a>
+# Performing a post\-incident analysis in Incident Manager<a name="analysis"></a>
 
 Post\-incident analysis guides you through identifying improvements to your incident response, including time to detection and mitigation\. An analysis can also help you understand the root cause of the incidents\. Incident Manager creates recommended *action items* to improve your incident response\. 
 

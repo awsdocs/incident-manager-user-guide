@@ -1,11 +1,11 @@
-# Contacts<a name="contacts"></a>
+# Working with contacts in Incident Manager<a name="contacts"></a>
 
 AWS Systems Manager Incident Manager contacts are responders to incidents\. A contact can have multiple channels that Incident Manager can engage during an incident\. You can define a contact's engagement plan to describe how and when Incident Manager engages the contact\.
 
 **Topics**
 + [Contact channels](#contacts-channels)
 + [Engagement plans](#contacts-engage)
-+ [Define a contact](#contacts-define)
++ [Create a contact](#contacts-define)
 + [Import contact details to your address book](#contacts-details-file)
 
 ## Contact channels<a name="contacts-channels"></a>
@@ -14,13 +14,13 @@ Contact channels are the various methods Incident Manager uses to engage a conta
 
 Incident Manager supports the following contact channels:
 + Email
-+ SMS 
++ Short Message Service \(SMS\) 
 + Voice
 
 **Contact channel activation**  
 To protect your privacy and security, Incident Manager sends a device activation code to you when you create contacts\. To engage your devices during an incident, you must first activate them\. To do so, enter the device activation code on the create contact page\.
 
-Certain features of Incident Manager include functionality that send notifications to a contact channel\. By using these features, you instruct us, as part of the functioning of these features, to send notifications \(SMS/voice messages\), of service disruptions or other events, to the contact channels entered into the applicable workflows\. You confirm, by using these features, that you're authorized to input the contact channels provided to Incident Manager\.
+Certain features of Incident Manager include functionality that send notifications to a contact channel\. By using these features, you consent to this service sending notifications about service disruptions or other events to the contact channels included in the specified workflow\. This includes notifications sent to a contact as part of an on\-call schedule rotation\. Notifications may be sent by email, SMS message, or voice call as specified in a contact's details\. You confirm by using these features that you're authorized to add the contact channels you provide to Incident Manager\.
 
 **Opting out**  
 You can cancel these notifications at any time by removing a mobile device as a contact channel\. Individual notification recipients may also cancel notifications at any time by removing the device from their contact\.
@@ -54,11 +54,11 @@ To deactivate a device, reply **UNSUBSCRIBE**\. Replying **UNSUBSCRIBE** stops I
 
 ## Engagement plans<a name="contacts-engage"></a>
 
-Engagement plans define when Incident Manager engages the contact channels\. You can engage contact channels multiple times at different stages from the start of an engagement\. You can use engagement plans in an escalation plan or response plan\. To learn more about escalation plans, see [Escalation plans](escalation.md)\. 
+Engagement plans define when Incident Manager engages the contact channels\. You can engage contact channels multiple times at different stages from the start of an engagement\. You can use engagement plans in an escalation plan or response plan\. To learn more about escalation plans, see [Working with escalation plans in Incident Manager](escalation.md)\. 
 
-## Define a contact<a name="contacts-define"></a>
+## Create a contact<a name="contacts-define"></a>
 
-To define a contact, use the following steps\.
+To create a contact, use the following steps\.
 
 1. Open the [Incident Manager console](https://console.aws.amazon.com/systems-manager/incidents/home) and choose **Contacts** from the left navigation\.
 
@@ -78,7 +78,7 @@ To define a contact, use the following steps\.
 
 1. Define an engagement plan\.
 **Important**  
-To engage a contact you must define an engagement plan\.
+To engage a contact, you must define an engagement plan\.
 
    1. Choose a **Contact channel name**\.
 
@@ -94,7 +94,7 @@ To engage a contact you must define an engagement plan\.
 
 1. Choose **Finish**\.
 
-After you define a contact and activate its contact channels, you can add contacts to escalation plans to form a chain of escalation\. To learn more about escalation plans, see [Escalation plans](escalation.md)\. You can add contacts to a response plan for direct engagement\. To learn more about creating response plans, see [Response plans](response-plans.md)\.
+After you define a contact and activate its contact channels, you can add contacts to escalation plans to form a chain of escalation\. To learn more about escalation plans, see [Working with escalation plans in Incident Manager](escalation.md)\. You can add contacts to a response plan for direct engagement\. To learn more about creating response plans, see [Working with response plans in Incident Manager](response-plans.md)\.
 
 ## Import contact details to your address book<a name="contacts-details-file"></a>
 

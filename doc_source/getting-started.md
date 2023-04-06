@@ -1,12 +1,12 @@
-# Getting prepared with Incident Manager<a name="getting-started"></a>
+# Getting started with Incident Manager<a name="getting-started"></a>
 
 This section walks through **Get prepared** in the Incident Manager console\. You're required to complete **Get prepared** in the console before you can use it for incident management\. The wizard walks you through setting up your replication set, at least one contact and one escalation plan, and your first response plan\. The following guides will help you understand Incident Manager and the incident lifecycle:
 + [What Is AWS Systems Manager Incident Manager?](what-is-incident-manager.md)
-+ [Incident lifecycle](incident-lifecycle.md)
++ [The incident lifecycle in Incident Manager](incident-lifecycle.md)
 
 ## Prerequisites<a name="getting-started-prereq"></a>
 
-If you're using Incident Manager for the first time, see the [Setting up for AWS Systems Manager Incident Manager](setting-up.md)\. We recommend setting up Incident Manager in the account that you use to manage your operations\.
+If you're using Incident Manager for the first time, see the [Setting up AWS Systems Manager Incident Manager](setting-up.md)\. We recommend setting up Incident Manager in the account that you use to manage your operations\.
 
 We recommend that you complete the Systems Manager quick setup before beginning the Incident Manager **Get prepared** wizard\. Use Systems Manager [Quick Setup](https://console.aws.amazon.com/systems-manager/quick-setup) to configure frequently used AWS services and features with recommended best practices\. Incident Manager uses Systems Manager features to manage incidents associated with your AWS accounts and benefits from having Systems Manager configured first\. 
 
@@ -28,7 +28,7 @@ The first time you use Incident Manager, you can access the **Get prepared** wiz
 
 1. To set up encryption for your replication set, do one of the following:
 **Note**  
-All Incident Manager resources are encrypted\. To learn more about how your data is encrypted, see [Data Protection in Incident Manager](data-protection.md)\. For more information about your Incident Manager replication set, see [Using the Incident Manager replication set](disaster-recovery-resiliency.md#replication)\.
+All Incident Manager resources are encrypted\. To learn more about how your data is encrypted, see [Data protection in Incident Manager](data-protection.md)\. For more information about your Incident Manager replication set, see [Using the Incident Manager replication set](disaster-recovery-resiliency.md#replication)\.
    + To use an AWS owned key, choose **Use AWS owned key**\.
    + To use your own AWS KMS key, choose **Choose an existing AWS KMS key**\. For each Region you selected in step 3, choose an AWS KMS key, or enter an AWS KMS Amazon Resource Name \(ARN\)\.
 **Tip**  
@@ -36,7 +36,7 @@ If you don't have an available AWS KMS key, choose **Create an AWS KMS key**\.
 
 1. \(Optional\) In the **Tags** area, add one or more tags to the replication set\. A tag includes a key and, optionally, a value\.
 
-   Tags are optional metadata that you assign to a resource\. Tags allow you to categorize a resource in different ways, such as by purpose, owner, or environment\. For more information, see [Tagging Incident Manager resources](tagging.md)\.
+   Tags are optional metadata that you assign to a resource\. Tags allow you to categorize a resource in different ways, such as by purpose, owner, or environment\. For more information, see [Tagging resources in Incident Manager](tagging.md)\.
 
 1. Choose **Create**\.
 
@@ -49,7 +49,7 @@ Creating the replication set creates the `AWSServiceRoleforIncidentManager` serv
 
 1. Choose **Create contact**\. 
 
-   Incident Manager engages contacts during an incident\. For more information about contacts, see [Contacts](contacts.md)\.
+   Incident Manager engages contacts during an incident\. For more information about contacts, see [Working with contacts in Incident Manager](contacts.md)\.
 
 1. Enter the contact's name\.
 
@@ -83,7 +83,7 @@ Creating the replication set creates the `AWSServiceRoleforIncidentManager` serv
 
 **\(Optional\) Escalation plans**
 
-1. Choose **Create escalation plan**\. An escalation plan escalates through your contacts during an incident, ensuring that Incident Manager engages the correct responders during an incident\. For more information about escalation plans, see [Escalation plans](escalation.md)\.
+1. Choose **Create escalation plan**\. An escalation plan escalates through your contacts during an incident, ensuring that Incident Manager engages the correct responders during an incident\. For more information about escalation plans, see [Working with escalation plans in Incident Manager](escalation.md)\.
 
 1. Enter a unique and identifiable **Escalation plan name**\.
 
@@ -107,7 +107,7 @@ Creating the replication set creates the `AWSServiceRoleforIncidentManager` serv
    + **Engagements**
    +  **Third\-party integrations**
 
-   For information about adding these elements to response plans later, see [Incident preparation](incident-response.md)\.
+   For information about adding these elements to response plans later, see [Preparing for incidents in Incident Manager](incident-response.md)\.
 
 1. Enter a unique, identifiable **Name**\.
 
@@ -125,4 +125,4 @@ Creating the replication set creates the `AWSServiceRoleforIncidentManager` serv
 
    After you choose **Create response plan**, the **Response plans** list console page opens\. 
 
-After you've created a response plan, you can associate Amazon CloudWatch alarms or Amazon EventBridge events with the response plan\. This will automatically create an incident based on an alarm or event\. To learn more about incident creation, see [Incident creation](incident-creation.md)\.
+After you've created a response plan, you can associate Amazon CloudWatch alarms or Amazon EventBridge events with the response plan\. This will automatically create an incident based on an alarm or event\. To learn more about incident creation, see [Creating incidents in Incident Manager](incident-creation.md)\.

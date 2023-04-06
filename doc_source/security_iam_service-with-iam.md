@@ -59,7 +59,7 @@ The Incident Manager service supports only two types of resource\-based policies
 
 Incident Manager doesn't support policies that deny access to resources shared using AWS RAM\.
 
-To learn how to attach a resource\-based policy to a response plan or contact, see [Cross\-Region and cross\-account incident management](incident-manager-cross-account-cross-region.md)\.
+To learn how to attach a resource\-based policy to a response plan or contact, see [Cross\-Region and cross\-account incident management in Incident Manager](incident-manager-cross-account-cross-region.md)\.
 
 ### Resource\-based policy examples within Incident Manager<a name="security_iam_service-with-iam-resource-based-policies-examples"></a>
 
@@ -222,7 +222,7 @@ Changing the permissions for a service role might break Incident Manager functio
 
 ### Choosing an IAM role in Incident Manager<a name="security_iam_service-with-iam-roles-choose"></a>
 
-When you create a response plan resource in Incident Manager, you must choose a role to allow Incident Manager to run a Systems Manager automation document on your behalf\. If you have previously created a service role or service\-linked role, then Incident Manager provides you with a list of roles to choose from\. It's important to choose a role that allows access to run your automation document instances\. For more information, see [Runbooks and automation](runbooks.md)\. When you create a AWS Chatbot chat channel to be used during an incident you can select a service role that allows you to use commands directly from chat\. To learn more about creating chat channels for incident collaboration, see [Chat channels](chat.md)\. To learn more about IAM policies in AWS Chatbot, see [Managing permissions for running commands using AWS Chatbot](https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-cli-commands.html#iam-policies-for-slack-channels-cli-support) in the *AWS Chatbot Administrator guide*\.
+When you create a response plan resource in Incident Manager, you must choose a role to allow Incident Manager to run a Systems Manager automation document on your behalf\. If you have previously created a service role or service\-linked role, then Incident Manager provides you with a list of roles to choose from\. It's important to choose a role that allows access to run your automation document instances\. For more information, see [Working with Systems Manager Automation runbooks in Incident Manager](runbooks.md)\. When you create a AWS Chatbot chat channel to be used during an incident you can select a service role that allows you to use commands directly from chat\. To learn more about creating chat channels for incident collaboration, see [Working with chat channels in Incident Manager](chat.md)\. To learn more about IAM policies in AWS Chatbot, see [Managing permissions for running commands using AWS Chatbot](https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-cli-commands.html#iam-policies-for-slack-channels-cli-support) in the *AWS Chatbot Administrator guide*\.
 
 ## Service\-linked roles for Incident Manager<a name="security_iam_service-with-iam-roles-service-linked"></a>
 
@@ -231,6 +231,6 @@ When you create a response plan resource in Incident Manager, you must choose a 
 | --- |--- |
 |  Supports service\-linked roles  |    Yes  | 
 
-  A service\-linked role is a type of service role that is linked to an AWS service\. The service can assume the role to perform an action on your behalf\. Service\-linked roles appear in your IAM account and are owned by the service\. An IAM administrator can view, but not edit the permissions for service\-linked roles\. 
+  A service\-linked role is a type of service role that is linked to an AWS service\. The service can assume the role to perform an action on your behalf\. Service\-linked roles appear in your AWS account and are owned by the service\. An IAM administrator can view, but not edit the permissions for service\-linked roles\. 
 
 For information about creating or managing Incident Manager service\-linked roles, see [Using service\-linked roles for Incident Manager](using-service-linked-roles.md)\.

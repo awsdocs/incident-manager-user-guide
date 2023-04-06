@@ -1,4 +1,4 @@
-# Incident preparation<a name="incident-response"></a>
+# Preparing for incidents in Incident Manager<a name="incident-response"></a>
 
 Planning for an incident begins long before the incident lifecycle\. To prepare for an incident, consider each of the following topics before you create response plans\. Use monitoring, contacts, escalation plans, chat channels, and runbooks to build response plans that automate response\. 
 
@@ -6,11 +6,12 @@ Planning for an incident begins long before the incident lifecycle\. To prepare 
 
 **Topics**
 + [Monitoring](#incident-response-monitoring)
-+ [Contacts](contacts.md)
-+ [Escalation plans](escalation.md)
-+ [Chat channels](chat.md)
-+ [Runbooks and automation](runbooks.md)
-+ [Response plans](response-plans.md)
++ [Working with contacts in Incident Manager](contacts.md)
++ [Working with on\-call schedules in Incident Manager](incident-manager-on-call-schedule.md)
++ [Working with escalation plans in Incident Manager](escalation.md)
++ [Working with chat channels in Incident Manager](chat.md)
++ [Working with Systems Manager Automation runbooks in Incident Manager](runbooks.md)
++ [Working with response plans in Incident Manager](response-plans.md)
 
 ## Monitoring<a name="incident-response-monitoring"></a>
 
@@ -21,6 +22,6 @@ Monitoring the health of your AWS hosted applications is key to ensuring applica
 + **Client\-side versus server\-side metrics** – If there is a discrepancy between related metrics on the client and server\.
 + **Dependency failures** – Failures that your team can and should prepare for\.
 
-After creating response plans, you can use your monitoring solutions to automatically track incidents the moment they happen in your environment\. For more information about incident tracking and creation, see the [Incident tracking](tracking.md)\.
+After creating response plans, you can use your monitoring solutions to automatically track incidents the moment they happen in your environment\. For more information about incident tracking and creation, see the [Tracking incidents in Incident Manager](tracking.md)\.
 
-For more information about architecting secure, high\-performing, resilient, and efficient infrastructure applications and workloads, see the [AWS Well\-Architected whitepaper](aws.amazon.com/architecture/well-architected/)\.
+For more information about architecting secure, high\-performing, resilient, and efficient infrastructure applications and workloads, see the [AWS Well\-Architected whitepaper](http://aws.amazon.com/architecture/well-architected/)\.

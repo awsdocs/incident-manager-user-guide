@@ -1,4 +1,4 @@
-# AWS Systems Manager Incident Manager and interface VPC endpoints \(AWS PrivateLink\)<a name="vpc-interface-endpoints"></a>
+# Working with AWS Systems Manager Incident Manager and interface VPC endpoints \(AWS PrivateLink\)<a name="vpc-interface-endpoints"></a>
 
 You can establish a private connection between your VPC and AWS Systems Manager Incident Manager by creating an *interface VPC endpoint*\. Interface endpoints are powered by AWS PrivateLink\. With AWS PrivateLink, you can privately access Incident Manager API operations without an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection\.\. Instances in your VPC don't need public IP addresses to communicate with Incident Manager API operations\. Traffic between your VPC and Incident Manager stays within the Amazon network\. 
 

@@ -1,8 +1,8 @@
-# Incident creation<a name="incident-creation"></a>
+# Creating incidents in Incident Manager<a name="incident-creation"></a>
 
 Incident Manager, a capability of AWS Systems Manager, helps you manage and quickly respond to incidents\. You can configure Amazon CloudWatch and Amazon EventBridge to automatically create incidents based on CloudWatch alarms and EventBridge events\. You can also create incidents manually on the incident list page or by using the [StartIncident](https://docs.aws.amazon.com/incident-manager/latest/APIReference/API_StartIncident.html) API action from the AWS CLI or the AWS SDK\. Incident Manager deduplicates incidents created from the same CloudWatch alarm or EventBridge event into the same incident\.
 
-For incidents automatically created by CloudWatch alarms or EventBridge events, Incident Manager attempts to create an incident in the same AWS Region as the event rule or alarm\. In the event that Incident Manager is not available in the AWS Region, CloudWatch or EventBridge automatically create the incident in one of the available Regions specified in your replication set\. For more information, see [Cross\-Region and cross\-account incident management](incident-manager-cross-account-cross-region.md)\. 
+For incidents automatically created by CloudWatch alarms or EventBridge events, Incident Manager attempts to create an incident in the same AWS Region as the event rule or alarm\. In the event that Incident Manager is not available in the AWS Region, CloudWatch or EventBridge automatically create the incident in one of the available Regions specified in your replication set\. For more information, see [Cross\-Region and cross\-account incident management in Incident Manager](incident-manager-cross-account-cross-region.md)\. 
 
 When the system creates an incident, Incident Manager automatically collects information about the AWS resources involved in the incident and adds this information to the **Related items** tab\. If you specified a runbook in your response plan, when the system creates an incident, Incident Manager can send the information about the AWS resources involved in the incident to the runbook\. The system can then target those resources when it initiates the runbook and attempts to remediate the issue\.
 
@@ -10,14 +10,14 @@ When the system creates an incident, it also creates a parent operational workit
 
 **Important**  
 Note the following important details\.  
-In the event that Incident Manager is not available, the system can only fail over and create incidents in other AWS Regions if you have specified at least two Regions in your replication set\. For information about configuring a replication set, see [Getting prepared with Incident Manager](getting-started.md)\.
+In the event that Incident Manager is not available, the system can only fail over and create incidents in other AWS Regions if you have specified at least two Regions in your replication set\. For information about configuring a replication set, see [Getting started with Incident Manager](getting-started.md)\.
 Incidents created by a cross\-Region failover don't invoke runbooks specified in response plans\.
 
-## Automatically create incidents with CloudWatch alarms<a name="incident-tracking-auto-alarms"></a>
+## Creating incidents automatically with CloudWatch alarms<a name="incident-tracking-auto-alarms"></a>
 
 CloudWatch uses your CloudWatch metrics to alert you about changes in your environment and to automatically perform the start incident action\. CloudWatch works with Systems Manager and Incident Manager to create an incident from a response plan template when an alarm goes into alarm state\. This requires the following prerequisites:
 + Incident Manager configured and replication set created\. This step creates the Incident Manager service linked role in your account, providing the necessary permissions\.
-+ A configured Incident Manager response plan\. To learn how to configure Incident Manager response plans, see [Response plans](response-plans.md) in the *Incident preparation* section of this guide\.
++ A configured Incident Manager response plan\. To learn how to configure Incident Manager response plans, see [Working with response plans in Incident Manager](response-plans.md) in the *Incident preparation* section of this guide\.
 + Configured CloudWatch metrics monitoring your application\. For monitoring best practices, see [Monitoring](incident-response.md#incident-response-monitoring) in the *Incident preparation* section of this guide\.
 
 **To create an alarm with a **Start incident** action**
@@ -33,7 +33,7 @@ CloudWatch uses your CloudWatch metrics to alert you about changes in your envir
 **Tip**  
 You can also add the create incident action to any existing alarm\.
 
-## Automatically create incidents with EventBridge events<a name="incident-tracking-auto-eventbridge"></a>
+## Creating incidents automatically with EventBridge events<a name="incident-tracking-auto-eventbridge"></a>
 
 EventBridge rules watch for event patterns\. If the event matches the defined pattern, Incident Manager creates an incident using the chosen response plan\. 
 
@@ -159,7 +159,7 @@ When selecting a response plan, all response plans that you own and have been sh
 
 1. Review your rule then choose **Create rule**\.
 
-## Manually create incidents<a name="incident-tracking-manual"></a>
+## Creating incidents manually<a name="incident-tracking-manual"></a>
 
 Responders can manually track an incident using the Incident Manager console by using a predefined response plan\. Use the following steps to create an incident\.
 

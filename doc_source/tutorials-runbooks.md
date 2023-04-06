@@ -14,7 +14,7 @@ This tutorial describes how to edit a CloudWatch alarm assigned to an Amazon EC2
 + [Using Amazon CloudWatch alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html) in the *Amazon CloudWatch User Guide*
 + [Amazon EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Instances.html) in the *Amazon EC2 User Guide for Windows Instances*
 + [Amazon EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Instances.html) in the *Amazon EC2 User Guide for Linux Instances*
-+ [Response plans](response-plans.md)
++ [Working with response plans in Incident Manager](response-plans.md)
 
 **Important**  
 You will incur costs by creating AWS resources and using runbook automation steps\. For more information, see [AWS pricing](http://aws.amazon.com/pricing)\.

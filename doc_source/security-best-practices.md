@@ -3,10 +3,10 @@
 AWS Systems Manager Incident Manager provides many security features to consider as you develop and implement your own security policies\. The following best practices are general guidelines and don't represent a complete security solution\. Because these best practices might not be appropriate or sufficient for your environment, treat them as helpful considerations rather than prescriptions\.
 
 **Topics**
-+ [Incident Manager preventative security best practices](#security-best-practices-prevent)
-+ [Incident Manager detective security best practices](#security-best-practices-detect)
++ [Preventative security best practices for Incident Manager](#security-best-practices-prevent)
++ [Detective security best practices for Incident Manager](#security-best-practices-detect)
 
-## Incident Manager preventative security best practices<a name="security-best-practices-prevent"></a>
+## Preventative security best practices for Incident Manager<a name="security-best-practices-prevent"></a>
 
 **Implement least privilege access**  
 When granting permissions, you decide who is getting what permissions to which Incident Manager resources\. You enable specific actions that you want to allow on those resources\. Therefore, grant only the permissions that are required to perform a task\. Implementing least privilege access is fundamental in reducing security risk and the impact that could result from errors or malicious intent\. 
@@ -33,13 +33,13 @@ AWS regularly releases updated versions of tools and plugins that you can use in
 **Related content**  
 [Security best practices for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/security-best-practices.html)
 
-## Incident Manager detective security best practices<a name="security-best-practices-detect"></a>
+## Detective security best practices for Incident Manager<a name="security-best-practices-detect"></a>
 
 **Identify and audit all your Incident Manager resources**  
 Identification of your IT assets is a crucial aspect of governance and security\. Identify your Systems Manager resources to assess their security posture and take action on potential areas of weakness\. Create resource groups for your Incident Manager resources\. For more information, see [What Is AWS Resource Groups?](https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html)
 
 **Use AWS CloudTrail**  
-AWS CloudTrail provides a record of actions taken by a user, role, or an AWS service in Incident Manager\. Using the information collected by AWS CloudTrail, you can determine the request that was made to Incident Manager, the IP address from which the request was made, who made the request, when it was made, and additional details\. For more information, see [Logging AWS Systems Manager Incident Manager API calls using AWS CloudTrail](logging-using-cloudtrail.md)\.
+AWS CloudTrail provides a record of actions taken by a user, role, or an AWS service in Incident Manager\. Using the information collected by AWS CloudTrail, you can determine the request that was made to Incident Manager, the IP address from which the request was made, who made the request, when it was made, and additional details\. For more information, see [Logging Incident Manager API calls using AWS CloudTrail](logging-using-cloudtrail.md)\.
 
 **Monitor AWS security advisories**  
 Regularly check security advisories posted in Trusted Advisor for your AWS account\. You can do this programmatically using [describe\-trusted\-advisor\-checks](https://docs.aws.amazon.com/cli/latest/reference/support/describe-trusted-advisor-checks.html)\. 

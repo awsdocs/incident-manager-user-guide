@@ -4,5 +4,4 @@ These AWS Systems Manager Incident Manager tutorials help you build a more robus
 
 **Topics**
 + [Using Systems Manager Automation runbooks with Incident Manager](tutorials-runbooks.md)
-+ [Configuring on\-call rotations](tutorials-oncall.md)
-+ [Managing security incidents](tutorials-security.md)
++ [Managing security incidents in Incident Manager](tutorials-security.md)

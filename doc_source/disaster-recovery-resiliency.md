@@ -10,7 +10,7 @@ In addition to the AWS global infrastructure, Incident Manager offers several fe
 
 ## Using the Incident Manager replication set<a name="replication"></a>
 
-The Incident Manager replication set replicates your data to many Regions to increase cross Region redundancy, allow Incident Manager to access resources in different Regions and reduce latency for your users\. The replication set it also used to encrypt your data with either an AWS owned key or your own customer owned key\. All Incident Manager resources are encrypted by default\. To learn more about how your resources are encrypted, see [Data Protection in Incident Manager](data-protection.md)\. To get started with Incident Manager, first create your replication set using the **Get prepared** wizard\. To learn more about getting prepared in Incident Manager, see the [Get prepared wizard](getting-started.md#getting-started-wizard)\.
+The Incident Manager replication set replicates your data to many Regions to increase cross Region redundancy, allow Incident Manager to access resources in different Regions and reduce latency for your users\. The replication set it also used to encrypt your data with either an AWS owned key or your own customer owned key\. All Incident Manager resources are encrypted by default\. To learn more about how your resources are encrypted, see [Data protection in Incident Manager](data-protection.md)\. To get started with Incident Manager, first create your replication set using the **Get prepared** wizard\. To learn more about getting prepared in Incident Manager, see the [Get prepared wizard](getting-started.md#getting-started-wizard)\.
 
 ### Editing your replication set<a name="replication-edit"></a>
 

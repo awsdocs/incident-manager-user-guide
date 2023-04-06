@@ -16,7 +16,7 @@ The top banner on every incident details page includes the following information
 + **Runbooks** – The statuses for the runbooks associated with this incident\. The status can be **waiting for input**, **successful**, or **unsuccessful**\. If a runbook’s status is **waiting for input**, you can select the runbook to view action details\. You can click **unsuccessful** to view runbooks that are **Timed out**, **Failed**, or **Canceled**\.
 + **Engagements** – The total number of engagements and the status of each engagement\. When you create an engagement, its status is **Engaged**\. Once you acknowledge the engagement, the status changes from **Engaged** to **Acknowledged**\. Incident Manager doesn’t support acknowledgement of third\-party engagements, such engagements remain in the **Engaged** status\. 
 
- You can edit the incident title, impact, and chat channel by choosing **Edit** in the top\-right corner of the banner\. 
+You can edit the incident title, impact, and chat channel by choosing **Edit** in the top\-right corner of the banner\. 
 
 ## Incident notes<a name="tracking-details-incidentnotes"></a>
 
@@ -75,7 +75,7 @@ To remove metrics, choose **Remove**, and then choose the metrics you want to re
 
 ## Timeline<a name="tracking-details-timeline"></a>
 
-Use the **Timeline** tab to track events that occur during an incident\. Incident Manager automatically populates timeline events that identify significant occurrences during the incident\. Responders can add custom events based on occurrences that are detected manually\. During the post\-incident analysis, the timeline tab provides valuable insights into how to better prepare and respond to incidents in the future\. For more information about post\-incident analysis, see [Post\-incident analysis](analysis.md)\. 
+Use the **Timeline** tab to track events that occur during an incident\. Incident Manager automatically populates timeline events that identify significant occurrences during the incident\. Responders can add custom events based on occurrences that are detected manually\. During the post\-incident analysis, the timeline tab provides valuable insights into how to better prepare and respond to incidents in the future\. For more information about post\-incident analysis, see [Performing a post\-incident analysis in Incident Manager](analysis.md)\. 
 
 To add a custom timeline event, choose **Add**\. Select a date using the calendar, and then enter a time\. All times are shown in your local time zone\. Provide a brief description of the event that appears in the timeline\. 
 
@@ -95,9 +95,9 @@ To cancel a runbook execution, choose **Cancel runbook**\. This will stop the ex
 
 ## Engagements<a name="tracking-details-engagements"></a>
 
-The **Engagements** tab of the incident details drives the engagement of responders and teams\. From this tab, you can see who has been engaged, who has responded, as well as which responders are going to be engaged as part of an escalation plan\. Responders can engage other contacts directly from this tab\. To learn more about creating contacts and escalation plans, see the [Contacts](contacts.md) and [Escalation plans](escalation.md) sections of this guide\. 
+The **Engagements** tab of the incident details drives the engagement of responders and teams\. From this tab, you can see who has been engaged, who has responded, as well as which responders are going to be engaged as part of an escalation plan\. Responders can engage other contacts directly from this tab\. To learn more about creating contacts and escalation plans, see the [Working with contacts in Incident Manager](contacts.md) and [Working with escalation plans in Incident Manager](escalation.md) sections of this guide\. 
 
-You can configure response plans with contacts and escalation plans to automatically start engagement at the beginning of an incident\. To learn more about configuring response plans, see the [Response plans](response-plans.md) section of this guide\.
+You can configure response plans with contacts and escalation plans to automatically start engagement at the beginning of an incident\. To learn more about configuring response plans, see the [Working with response plans in Incident Manager](response-plans.md) section of this guide\.
 
 You can find information about each contact in the table\. This table includes the following information:
 + **Name** – Links to the contact details page that displays their contact methods and engagement plan\.
@@ -133,4 +133,4 @@ In the **Incident properties** section, you can view the following:
 + **Analysis** – Identifies the analysis created from this incident\. Create an analysis from a resolved incident to improve your incident response process\. Choose the analysis to open the analysis details page\.
 + **Owner** – The account in which the incident was created\.
 
-In the **Tags** section, you can view and edit the tag keys and values associated with the incident record\. For more information about tags in Incident Manager, see [Tagging Incident Manager resources](tagging.md)\.
+In the **Tags** section, you can view and edit the tag keys and values associated with the incident record\. For more information about tags in Incident Manager, see [Tagging resources in Incident Manager](tagging.md)\.
